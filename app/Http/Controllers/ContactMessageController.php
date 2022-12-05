@@ -31,6 +31,6 @@ class ContactMessageController extends Controller
 
 
         // return Redirect::route('contact.index')->with('success', 'woo');
-        return response()->json(['success' => 'Post created successfully.']);
+        return response()->json(['success' => 'Conatact Message Sent Successfully.']);
     }
 }

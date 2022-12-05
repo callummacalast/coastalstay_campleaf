@@ -1,15 +1,4 @@
 <x-guest-layout>
-    <script>
-        const successCallback = (position) => {
-            console.log(position);
-        };
-
-        const errorCallback = (error) => {
-            console.log(error);
-        };
-
-        navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-    </script>
     <div class="container mx-auto m-5">
         <div class="leave-message fixed right-5 bottom-5 z-50">
             <a href="{{ route('message.create') }}"
@@ -18,12 +7,8 @@
         <h2 class="m-5 text-5xl text-center">Message Board</h3>
             <div class="pagination w-full">
                 {{ $messages->links() }}
-
             </div>
-
     </div>
-
-    <!-- component -->
     <div
         class="p-8 bg-gray-50 bg-gray-900 flex items-center justify-center  grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
         @php
@@ -41,7 +26,12 @@
                             class="block text-sm text-gray-500 text-gray-400 font-light leading-snug">{{ \Carbon\Carbon::parse($message->created_at)->diffForHumans() }}</span>
                     </div>
                 </div>
-                <p class="text-gray-800 text-gray-100 leading-snug md:leading-normal">{{ $message->message }}</p>
+                <a href="{{ route('message.show', $message->id) }}">
+                    <h3 class="text-white font-bold mb-2">{{ $message->title }}</h3>
+                    <p class="text-gray-800 text-gray-100 leading-snug md:leading-normal">
+                        {{ Str::limit($message->message, 200) }}
+                    </p>
+                </a>
                 <div class="flex justify-between items-center mt-5">
                     <div class="flex ">
                         <a href="{{ route('message.like', $message->id) }}">
@@ -73,11 +63,9 @@
                                 </g>
                             </svg>
                         </a>
-
                         <span
                             class="ml-1 text-gray-500 text-gray-400  font-light">{{ $message->likes == 0 ? '0' : $message->likes }}</span>
                     </div>
-                    {{-- <div class="ml-1 text-gray-500 text-gray-400 font-light">33 comments</div> --}}
                 </div>
             </div>
             @php

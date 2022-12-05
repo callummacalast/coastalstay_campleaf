@@ -21,9 +21,8 @@ class HotSpotSeeder extends Seeder
                 'name' => fake()->name(),
                 'description' => fake()->paragraph(),
                 'status' => fake()->randomElement(['live', 'pending']),
-                'postcode' => fake()->postcode(),
-                'lat' => fake()->latitude(),
-                'lng' => fake()->longitude()
+                'lat' => fake()->randomElement(['51.867432', '51.868913', '51.870185']),
+                'lng' => fake()->randomElement(['-5.122880', '-5.194777', '-5.197549'])
             ]);
         }
     }

@@ -1,34 +1,54 @@
 <x-guest-layout>
+    <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+        <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
 
-    <div class="container mx-auto m-5">
-
-        <div class="headnig">
-            <h3 class="text-center text-4xl font-bold">Our Campsite Rules</h3>
+            <h2
+                class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
+                <span class="relative inline-block">
+                    <svg viewBox="0 0 52 24" fill="currentColor"
+                        class="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block">
+                        <defs>
+                            <pattern id="07690130-d013-42bc-83f4-90de7ac68f76" x="0" y="0" width=".135"
+                                height=".30">
+                                <circle cx="1" cy="1" r=".7"></circle>
+                            </pattern>
+                        </defs>
+                        <rect fill="url(#07690130-d013-42bc-83f4-90de7ac68f76)" width="52" height="24"></rect>
+                    </svg>
+                    <span class="relative">-</span>
+                </span>
+                Our Campsite Rules
+            </h2>
+            <p class="text-base text-gray-700 md:text-lg">
+                See below the list of our campsite rules, we would like to ask you respect these rules during your stay
+                with us!
+            </p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3">
-            @php
-                $colors = ['blue', 'indigo', 'orange', 'pink', 'red'];
-                $random_color = $colors[array_rand($colors)];
-            @endphp
-            @foreach ($rules as $rule)
-                <div class="p-8">
-                    <div class=" rounded-full w-16 h-16 flex justify-center items-center text-indigo-500 shadow-2xl">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 hover:animate-spin" viewBox="0 0 20 20"
-                            fill="blue">
-                            <path fill-rule="evenodd"
-                                d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"
-                                clip-rule="evenodd" />
-                        </svg>
+        <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+            <div class="grid gap-5 row-gap-5 sm:grid-cols-2 lg:grid-cols-4">
+                @php
+                    $count = 1;
+                @endphp
+                @foreach ($rules as $rule)
+                    <div class="px-12 text-center sm:px-0">
+                        <div
+                            class="flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-12 sm:h-12">
+                            <h3 class="font-bold text-2xl">
+                                {{ $count }}.
+                            </h3>
+                        </div>
+                        <h6 class="mb-2 text-sm font-bold leading-5 tracking-wider uppercase">
+                            {{ $rule->title }}
+                        </h6>
+                        <div class="mb-2 text-gray-700">
+                            {{ $rule->rule }}
+                        </div>
                     </div>
-                    <h2 class="uppercase mt-6 text-indigo-500 font-medium mb-3"> {{ $rule->title }} </h2>
-                    <p class="font-light text-sm text-gray-500 mb-3"> {{ $rule->rule }} Lorem ipsum dolor sit amet
-                        consectetur adipisicing elit. Soluta praesentium architecto alias odit, iure cumque, repellendus
-                        labore nemo quia culpa rerum perspiciatis laborum provident temporibus beatae minima cum. Vitae,
-                        eius! </p>
-                </div>
-            @endforeach
-            <div class="pagination w-full">
-                {{ $rules->links() }}
+                    @php
+                        $count++;
+                    @endphp
+                @endforeach
+
 
             </div>
         </div>

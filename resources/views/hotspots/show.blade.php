@@ -6,7 +6,7 @@
             <div class="max-w-6xl mx-auto p-4 sm:px-6 h-full">
                 <!-- Blog post -->
                 <article
-                    class="max-w-sm mx-auto md:max-w-none grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 xl:gap-16 items-center">
+                    class="max-w-sm mx-auto md:max-w-none grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 xl:gap-16 items-center my-10">
                     <a class="relative block group" href="#0">
                         <div class="absolute inset-0 bg-gray-800 hidden md:block transform md:translate-y-2 md:translate-x-4 xl:translate-y-4 xl:translate-x-8 group-hover:translate-x-0 group-hover:translate-y-0 transition duration-700 ease-out pointer-events-none"
                             aria-hidden="true"></div>
@@ -25,18 +25,6 @@
                     </a>
                     <div>
                         <header>
-                            {{-- <div class="mb-3">
-                                <ul class="flex flex-wrap text-xs font-medium -m-1">
-                                    <li class="m-1">
-                                        <a class="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-purple-600 hover:bg-purple-700 transition duration-150 ease-in-out"
-                                            href="#0">Product</a>
-                                    </li>
-                                    <li class="m-1">
-                                        <a class="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out"
-                                            href="#0">Engineering</a>
-                                    </li>
-                                </ul>
-                            </div> --}}
                             <h3 class="text-2xl lg:text-3xl font-bold leading-tight mb-2">
                                 {{ $hotSpot->name }}
                             </h3>
@@ -58,6 +46,9 @@
                         </footer>
                     </div>
                 </article>
+                <div class="container my-10 h-full">
+                    <div id="map" style="height: 600px; width: 100%;" class="shadow rounded"></div>
+                </div>
             </div>
         </section>
         <div class="max-w-screen-xl p-5 mx-auto dark:bg-gray-800 dark:text-gray-100">
@@ -92,6 +83,29 @@
                 @endforeach
 
             </div>
+            <script type="text/javascript">
+                function initMap() {
+                    const myLatLng = {
+                        lat: {{ $hotspot->lat }},
+                        lng: {{ $hotspot->lng }}
+                    };
+                    const map = new google.maps.Map(document.getElementById("map"), {
+                        zoom: 15,
+                        center: myLatLng,
+                    });
+                    marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(myLatLng),
+                        map: map
+
+                    });
+
+
+                }
+                window.initMap = initMap;
+            </script>
+
+            <script type="text/javascript"
+                src="https://maps.google.com/maps/api/js?key={{ env('GOOGLE_MAP_KEY') }}&callback=initMap"></script>
 
         </div>
     </div>

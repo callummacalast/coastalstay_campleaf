@@ -9,5 +9,5 @@ class MessageBoardItem extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'message'];
+    protected $fillable = ['title', 'message', 'status'];
 }

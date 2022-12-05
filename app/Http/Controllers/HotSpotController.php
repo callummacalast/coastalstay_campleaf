@@ -19,7 +19,14 @@ class HotSpotController extends Controller
 
         $hotspots = HotSpot::where('status', 'live')
             ->paginate(10);
-        return view('hotspots.index', compact('hotspots'));
+
+        $locations = $hotspots->pluck('lng', 'lat', 'name');
+
+        // dd($lat);
+
+        // dd($locations);
+
+        return view('hotspots.index', compact('hotspots', 'locations'));
     }
 
     /**
@@ -52,9 +59,9 @@ class HotSpotController extends Controller
             'name' => 'required',
             'description' => 'required',
             'status' => 'required',
-            'postcode' => 'required',
-            'lat' => '',
-            'lng' => ''
+
+            'lat' => 'required',
+            'lng' => 'required'
         ]);
 
         if ($request->hasFile('hotspot_image')) {
@@ -65,7 +72,7 @@ class HotSpotController extends Controller
 
             $path = $request->file('hotspot_image')->storeAs('public/hotspot_images', $fileNameToStore);
         } else {
-            $fileNameToStore = 'noimage.jpg';
+            $fileNameToStore = 'no_image.png';
         }
 
         $hotspot = new HotSpot;

@@ -5,17 +5,30 @@
         </div>
         <form action="{{ route('hotspot.store') }}" method="post" class="m-3" enctype="multipart/form-data">
             @csrf
+            <div class="container my-5 location">
+                <p>*Click a place on the map to add your hotspot</p>
+                <div id="map" style="height: 400px;"></div>
+            </div>
+            <div class="flex flex-row gap-5 ">
+                <div class="flex flex-col gap-3">
+                    <label for="lat">Latitude</label>
+                    <input type="text" readonly name="lat" class="rounded border-none bg-gray-100 shadow"
+                        value="" id="lat">
+                </div>
+                <div class="flex flex-col gap-3">
+                    <label for="lng">Longitude</label>
+                    <input type="text" readonly name="lng" class="rounded border-none bg-gray-100 shadow"
+                        value="" id="lng">
+                </div>
+            </div>
             <div class="flex flex-col">
                 <label for="name">Hotspot Title</label>
-                <input type="text" name="name" id="title" class="rounded border-none bg-gray-100 shadow">
+                <input type="text" name="name" id="title" class="rounded border-none bg-gray-100 shadow"
+                    value="{{ old('name') }}">
             </div>
             <div class="flex flex-col my-3">
                 <label for="description">Details</label>
-                <textarea rows="5" name="description" id="description" class="rounded border-none bg-gray-100 shadow"></textarea>
-            </div>
-            <div class="postcode">
-                <input type="text" name="postcode" class="border-none shadow bg-gray-100" id="" />
-                <input type="hidden" name="lat"><input type="hidden" name="lng">
+                <textarea rows="5" name="description" id="description" class="rounded border-none bg-gray-100 shadow">{{ old('description') }}</textarea>
             </div>
             <div class="status flex flex-col">
                 <label for="status">Status</label>
@@ -43,4 +56,45 @@
             <button type="submit" class="bg-blue-400 rounded shadow p-2 text-white my-3">Create Hotspot!</button>
         </form>
     </div>
+    <script type="text/javascript">
+        function initMap() {
+            const myLatLng = {
+                lat: 51.93298,
+                lng: -5.18128
+            };
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 15,
+                center: myLatLng,
+            });
+
+            var marker;
+
+            function placeMarker(location) {
+                if (marker) {
+                    marker.setPosition(location);
+                } else {
+                    marker = new google.maps.Marker({
+                        position: location,
+                        map: map
+                    });
+                }
+            }
+
+            google.maps.event.addListener(map, 'click', function(event) {
+                placeMarker(event.latLng);
+                map.panTo(event.latLng)
+                let input_lat = document.getElementById('lat');
+                let input_lng = document.getElementById('lng');
+
+                input_lat.value = event.latLng.lat()
+                input_lng.value = event.latLng.lng()
+
+            });
+
+
+        }
+        window.initMap = initMap;
+    </script>
+    <script type="text/javascript"
+        src="https://maps.google.com/maps/api/js?key={{ env('GOOGLE_MAP_KEY') }}&callback=initMap"></script>
 </x-guest-layout>

@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('name');
             $table->text('description');
             $table->string('status');
-            $table->string('postcode')->unique();
             $table->string('lat');
             $table->string('lng');
             $table->text('image')->nullable();

@@ -14,11 +14,9 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @vite('resources/css/app.css')
-
-
 </head>
 
-<body>
+<body class="bg-gray-50">
     <nav class="relative px-4 py-4 flex justify-between items-center bg-white shadow">
         <a class="text-3xl font-bold leading-none" href="{{ url('/') }}">
             <img src="https://www.coastalstay.co.uk/coastal-stay-logo-white-min.png" height="30px"
@@ -279,7 +277,7 @@
                 </a>
             </div>
             <p class="mt-8 text-base leading-6 text-center text-gray-400">
-                © 2021 SomeCompany, Inc. All rights reserved.
+                © 2021 Coastal Stay, Inc. All rights reserved.
             </p>
         </div>
     </section>

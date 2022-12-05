@@ -46,7 +46,7 @@ Route::group(['middleware' => ['role:admin']], function () {
     Route::get('/admin/rules/{id}', [AdminRuleController::class, 'show'])->name('admin.rules.show');
     Route::post('/admin/rules/update/{id}', [AdminRuleController::class, 'update'])->name('admin.rules.update');
     Route::post('/admin/rules/store', [AdminRuleController::class, 'store'])->name('admin.rules.store');
-    Route::get('/admin/rules/destroy/{id}', [AdminRuleController::class, 'dest\roy'])->name('admin.rules.destroy');
+    Route::get('/admin/rules/destroy/{id}', [AdminRuleController::class, 'destroy'])->name('admin.rules.destroy');
 
     Route::get('/admin/contact', [AdminContactMessageController::class, 'index'])->name('admin.contact.index');
 });
@@ -64,6 +64,7 @@ Route::post('/hotspots/store', [HotSpotController::class, 'store'])->name('hotsp
 
 Route::get('/messages', [MessageBoardItemController::class, 'index'])->name('message.index');
 Route::get('/messages/create', [MessageBoardItemController::class, 'create'])->name('message.create');
+Route::get('/messages/{id}', [MessageBoardItemController::class, 'show'])->name('message.show');
 Route::post('/messages/store', [MessageBoardItemController::class, 'store'])->name('message.store');
 Route::get('/messages/{id}/like', [MessageBoardItemController::class, 'like'])->name('message.like');
 

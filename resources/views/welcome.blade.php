@@ -105,6 +105,10 @@
                 <div
                     class="p-8 space-y-3 rounded-xl border-blue-400 border-blue-300 border-2 bg-gray-900 text-gray-100 hover:animate-pulse">
                     <div class="flex justify-between space-x-8">
+
+                        @php
+                            $weather_type = $weather_data->weather[0]->main;
+                        @endphp
                         <div class="flex flex-col items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
                                 class="w-24 h-24 p-2 text-yellow-400 fill-current">

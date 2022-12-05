@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('message');
+            $table->string('status');
             $table->integer('likes')->nullable();
             $table->timestamps();
         });

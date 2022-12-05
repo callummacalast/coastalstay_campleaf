@@ -18,7 +18,9 @@ class MessageBoardItemSeeder extends Seeder
         for ($i = 0; $i < 10; $i++) {
             MessageBoardItem::create([
                 'title' => fake()->sentence(),
-                'message' => fake()->paragraph()
+                'message' => fake()->paragraph(),
+                'status' => fake()->randomElement(['live', 'pending'])
+
             ]);
         }
     }

@@ -9,7 +9,6 @@
                     class="rounded border-none bg-white-100 shadow">
             </div>
             <div class="flex flex-col my-3">
-
                 <label for="title">Message</label>
                 <textarea rows="5" name="message" id="title" class="rounded border-none bg-white-100 shadow">{{ $message->message }}</textarea>
             </div>

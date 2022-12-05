@@ -14,6 +14,15 @@ class HomeController extends Controller
     public function index()
     {
         $weather_data = json_decode(@file_get_contents('https://api.openweathermap.org/data/2.5/weather?lat=51.932977&lon=-5.181277&appid=5ec6b1e1b5f7a1bba860ecfb5dbe82ad'));
+        // $weather_data = json_decode(@file_get_contents("https://api.openweathermap.org/data/2.5/forecast?lat=51.932977&lon=-5.181277&appid=5ec6b1e1b5f7a1bba860ecfb5dbe82ad"));
+        // dd($weather_data);
+        // $count = 0;
+        // foreach ($weather_data->list as $data) {
+        //     if ($count >= 6) {
+        //         dd($data);
+        //     }
+        // }
+        // $count++;
 
 
         $kelvin_temp = $weather_data->main->temp;
@@ -28,6 +37,8 @@ class HomeController extends Controller
             'https://lh3.googleusercontent.com/p/AF1QipOaqC3sCFRfyoWu2qs1mr5T0Z7oY2EkoCLTiV09=s1360-w1360-h1020',
             'https://lh3.googleusercontent.com/p/AF1QipPPzw6s15kzdvySegZjo8yyH5m2V9f3rcpWnyZK=s1360-w1360-h1020'
         ];
+
+
 
 
         return view('welcome', compact('weather_data', 'temp', 'home_gallery'));

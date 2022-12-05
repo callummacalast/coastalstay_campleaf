@@ -60,9 +60,10 @@ class MessageBoardItemController extends Controller
      * @param  \App\Models\MessageBoardItem  $messageBoardItem
      * @return \Illuminate\Http\Response
      */
-    public function show(MessageBoardItem $messageBoardItem)
+    public function show(MessageBoardItem $messageBoardItem, $message)
     {
-        //
+        $message = MessageBoardItem::findOrFail($message);
+        return view('messages.show', compact('message'));
     }
 
 
@@ -75,7 +76,7 @@ class MessageBoardItemController extends Controller
         $new_likes = $current_likes + 1;
 
         $message->likes = $new_likes;
-
+        $message->updated_at = now();
         $message->update();
 
         return Redirect::route('message.index')->with('success', 'Message Liked');
@@ -99,9 +100,19 @@ class MessageBoardItemController extends Controller
      * @param  \App\Models\MessageBoardItem  $messageBoardItem
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, MessageBoardItem $messageBoardItem)
+    public function update(Request $request, $message)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'required',
+            'message' => 'required',
+        ]);
+        $message = MessageBoardItem::findOrFail($message);
+
+        $message->fill($validated);
+
+        $message->update();
+
+        return Redirect::route('admin.message.index')->with('success', 'Message Updated');
     }
 
     /**

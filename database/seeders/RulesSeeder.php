@@ -19,8 +19,8 @@ class RulesSeeder extends Seeder
         for ($i = 0; $i < 10; $i++) {
 
             CampsiteRule::create([
-                'name' => fake()->name(),
-                'rule' => fake()->sentence()
+                'name' => fake()->randomElement(['Please Keep Dogs on leads', 'Please do not feed the goats', 'Park in the designated parking zones', 'No noise after 10pm']),
+                'rule' => fake()->sentence(),
             ]);
         }
     }
