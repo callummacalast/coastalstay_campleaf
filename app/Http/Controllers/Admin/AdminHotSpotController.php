@@ -10,7 +10,7 @@ class AdminHotSpotController extends Controller
 {
     public function index()
     {
-        $hotspots = HotSpot::paginate(10);
+        $hotspots = HotSpot::orderBy('created_at', 'DESC')->paginate(10);
         return view('admin.hotspots.index', compact('hotspots'));
     }
 

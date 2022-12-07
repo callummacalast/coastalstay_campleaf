@@ -81,7 +81,7 @@ class HotSpotController extends Controller
         $hotspot->fill($validated);
         $hotspot->save();
 
-        return Redirect::route('hotspot.index')->with('success', 'Hotspot Created');
+        return Redirect::route('hotspot.index')->with('success', 'Thank you for submitting your hotspot, your hotspot will be reviewed by a member of our team shortly!');
     }
 
     /**

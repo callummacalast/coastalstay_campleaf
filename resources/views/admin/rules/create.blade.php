@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="container mx-auto mt-32">
+    <div class="container mx-auto mt-10">
         <form action="{{ route('admin.rules.store') }}" method="post" class="m-3">
             @csrf
             <div class="flex flex-col">
