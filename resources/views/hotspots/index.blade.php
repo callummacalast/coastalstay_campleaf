@@ -119,7 +119,7 @@
                         return function() {
                             @if (App::environment('production'))
 
-                                let url = 'https://jrdev.co.uk//hotspot';
+                                let url = 'https://jrdev.co.uk/hotspot';
                             @else
                                 let url = 'http://campsite-info-board.test/hotspot';
                             @endif
