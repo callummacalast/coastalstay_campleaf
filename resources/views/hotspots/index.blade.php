@@ -77,12 +77,18 @@
             </div>
         </div>
     </div>
+    @if (App::environment('production'))
+        in "production" environment
+    @else
+        in "testing" environment
+    @endif
     <div id="hotspot-map" class="hidden container  m-3 w-full">
         <div class="container mt-5 h-full">
             <div id="map" style="height: 600px; width: 100%;" class="shadow rounded"></div>
         </div>
         <script type="text/javascript">
             function initMap() {
+
                 const myLatLng = {
                     lat: 51.93298,
                     lng: -5.18128
@@ -111,7 +117,12 @@
                     });
                     google.maps.event.addListener(marker, 'click', (function(marker, i) {
                         return function() {
-                            let url = 'http://campsite-info-board.test/hotspot';
+                            @if (App::environment('production'))
+
+                                let url = 'https://jrdev.co.uk//hotspot';
+                            @else
+                                let url = 'http://campsite-info-board.test/hotspot';
+                            @endif
                             infowindow.setContent('<a href="' + url + "/" + locations[i][3] +
                                 '" class="p-3 underline hover:text-blue-300 font-bold text-1xl">' +
                                 locations[i][2] + '</a>');
