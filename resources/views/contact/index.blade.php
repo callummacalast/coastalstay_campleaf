@@ -7,9 +7,10 @@
             <div class="flex flex-col justify-between">
                 <div class="space-y-2">
                     <h2 class="text-4xl font-bold leading-tight lg:text-5xl">Let's talk!</h2>
-                    <div class="text-gray-400">Vivamus in nisl metus? Phasellus.</div>
+                    <div class="text-gray-400">Please feel free to use the contact form to get in touch!</div>
                 </div>
-                <img src="https://source.unsplash.com/random/240x320?0" alt="" class="p-6 h-52 md:h-64">
+                <img src="https://www.coastalstay.co.uk/animals-wildlife-campsite.png" alt=""
+                    class="m-2 h-full rounded shadow">
             </div>
             <form novalidate="false" method="POST" action="{{ route('contact.store') }}" id="contact_form"
                 class="space-y-6 ng-untouched ng-pristine ng-valid ">

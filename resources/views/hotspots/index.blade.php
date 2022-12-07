@@ -1,6 +1,6 @@
 <x-guest-layout>
     <div class="container mx-auto m-5">
-        <div class="list-views mx-5 flex flex-row justify-between">
+        <div class="list-views mx-5 flex lg:flex-row md:flex-row flex-col items-center gap-5 justify-between">
 
             <div>
                 <h3 class="font-bold text-3xl">Our Hotspots</h3>
@@ -50,8 +50,14 @@
                             <a rel="noopener noreferrer" href="{{ route('hotspot.show', $hotspot->id) }}"
                                 class="px-3 py-2 text-xs font-semibold tracking-wider uppercase dark:text-gray-100 bgundefined hover:underlin">{{ $hotspot->name }}</a>
                             <div class="flex flex-col justify-start text-center dark:text-gray-100">
-                                <span class="text-3xl font-semibold leading-none tracking-wide">04</span>
-                                <span class="leading-none uppercase">Aug</span>
+
+                                <span class="text-3xl font-semibold leading-none tracking-wide">
+                                    {{ \Carbon\Carbon::parse($hotspot->created_at)->format('d') }}
+                                </span>
+                                <span class="leading-none uppercase">
+                                    {{ \Carbon\Carbon::parse($hotspot->created_at)->format('M') }}
+
+                                </span>
                             </div>
                         </div>
                         <h2 class="z-10 p-5">

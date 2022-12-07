@@ -86,8 +86,8 @@
             <script type="text/javascript">
                 function initMap() {
                     const myLatLng = {
-                        lat: {{ $hotspot->lat }},
-                        lng: {{ $hotspot->lng }}
+                        lat: {{ $hotSpot->lat }},
+                        lng: {{ $hotSpot->lng }}
                     };
                     const map = new google.maps.Map(document.getElementById("map"), {
                         zoom: 15,
