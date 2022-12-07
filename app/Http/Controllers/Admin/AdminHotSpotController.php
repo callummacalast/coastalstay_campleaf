@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\HotSpot;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class AdminHotSpotController extends Controller
 {
@@ -19,5 +20,26 @@ class AdminHotSpotController extends Controller
         $hotspot = HotSpot::find($hotspot);
 
         return view('admin.hotspots.show', compact('hotspot'));
+    }
+
+    public function update(Request $request, $hotspot)
+    {
+        // dd($request->all());
+
+
+        $spot = HotSpot::findOrFail($hotspot);
+
+        $validated = $request->validate([
+            'lat' => 'required',
+            'lng' => 'required',
+            'name' => 'required',
+            'description' => 'required',
+            'status' => 'in:live,pending',
+        ]);
+
+        $spot->fill($validated);
+        $spot->update();
+
+        return Redirect::route('admin.hotspots.index')->with('success', 'Hotspot updated');
     }
 }

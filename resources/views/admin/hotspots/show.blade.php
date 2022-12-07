@@ -3,7 +3,8 @@
         <div class="message text-dark m-3">
             <h3 class="text-4xl font-bold my-1">Update Hotspot</h3>
         </div>
-        <form action="{{ route('hotspot.store') }}" method="post" class="m-3" enctype="multipart/form-data">
+        <form action="{{ route('admin.hotspots.update', $hotspot->id) }}" method="post" class="m-3"
+            enctype="multipart/form-data">
             @csrf
             <div class="container my-5 location">
                 <div id="map" style="height: 400px;"></div>

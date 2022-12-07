@@ -38,7 +38,8 @@ Route::group(['middleware' => ['role:admin']], function () {
     Route::post('/admin/messages/update/{id}', [AdminMessageBoardItemController::class, 'update'])->name('admin.messages.update');
 
     Route::get('/admin/hotspots', [AdminHotSpotController::class, 'index'])->name('admin.hotspots.index');
-    Route::get('/admin/hotspots/{id}', [AdminHotSpotController::class, 'show'])->name('admin.hotspots.show');
+    Route::get('/admin/hotspots/{id}/edit', [AdminHotSpotController::class, 'show'])->name('admin.hotspots.show');
+    Route::post('/admin/hotspots/update/{id}', [AdminHotSpotController::class, 'update'])->name('admin.hotspots.update');
 
     Route::get('/admin/rules', [AdminRuleController::class, 'index'])->name('admin.rules.index');
     Route::post('/admin/rules/create', [AdminRuleController::class, 'create'])->name('admin.rules.create');
