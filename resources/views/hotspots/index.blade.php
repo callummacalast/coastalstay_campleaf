@@ -30,7 +30,7 @@
                 class="bg-blue-400 p-3 text-white rounded shadow hover:bg-blue-300 transition">Add Hotspot</a>
         </div>
         <div class="" id="hotspot-list">
-            <div class="max-w-screen-xl p-5 mx-auto dark:bg-gray-800 dark:text-gray-100">
+            <div class="max-w-screen-xl p-5 mx-auto ">
                 <div class="grid grid-cols-1 gap-5 lg:grid-cols-4 sm:grid-cols-2">
                     @php
                         $count = 0;
@@ -48,8 +48,8 @@
                         </div>
                         <div class="absolute top-0 left-0 right-0 flex items-center justify-between mx-5 mt-3">
                             <a rel="noopener noreferrer" href="{{ route('hotspot.show', $hotspot->id) }}"
-                                class="px-3 py-2 text-xs font-semibold tracking-wider uppercase dark:text-gray-100 bgundefined hover:underlin">{{ $hotspot->name }}</a>
-                            <div class="flex flex-col justify-start text-center dark:text-gray-100">
+                                class="px-3 py-2 text-xs font-semibold tracking-wider uppercase  bgundefined hover:underlin">{{ $hotspot->name }}</a>
+                            <div class="flex flex-col justify-start text-center ">
 
                                 <span class="text-3xl font-semibold leading-none tracking-wide">
                                     {{ \Carbon\Carbon::parse($hotspot->created_at)->format('d') }}
@@ -62,7 +62,7 @@
                         </div>
                         <h2 class="z-10 p-5">
                             <a rel="noopener noreferrer" href="{{ route('hotspot.show', $hotspot->id) }}"
-                                class="font-medium text-md hover:underline dark:text-gray-100">
+                                class="font-medium text-md hover:underline ">
                                 {{ Str::limit($hotspot->description, 50) }}</a>
                         </h2>
                 </div>

@@ -1,40 +1,8 @@
-{{-- <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Laravel</title>
-
-    <!-- Fonts -->
-    <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    @vite('resources/css/app.css')
-</head>
-
-<body class="antialiased"> --}}
-
 <x-guest-layout>
-    {{-- @if (Route::has('login'))
-        <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-            @auth
-                <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 text-gray-500 underline">Dashboard</a>
-            @else
-                <a href="{{ route('login') }}" class="text-sm text-gray-700 text-gray-500 underline">Log in</a>
 
-                @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 text-gray-500 underline">Register</a>
-                @endif
-            @endauth
-        </div>
-    @endif --}}
-    <!-- component -->
+    <section class="bg-white bg-gray-900 lg:h-screen xl:h-screen relative overlay">
 
-
-
-    <!-- component -->
-    <section class="bg-white bg-gray-900 lg:h-screen xl:h-screen">
-        <div class="container px-6 py-10 mx-auto">
+        <div class="container px-6 py-10 mx-auto z-50">
             <h1 class="text-3xl font-semibold text-gray-800 capitalize lg:text-4xl text-white">explore <br>
                 <span class="underline decoration-blue-500">Coastal Stay</span>
             </h1>

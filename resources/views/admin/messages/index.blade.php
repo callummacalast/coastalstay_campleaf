@@ -63,7 +63,7 @@
                         </td>
 
                         <td class="py-4 px-6">
-                            <a href="{{ route('admin.messages.show', $message->id) }}"
+                            <a href="{{ route('admin.messages.edit', $message->id) }}"
                                 class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                             <a href="#"
                                 class="font-medium text-red-600 dark:text-blue-500 hover:underline">Delete</a>

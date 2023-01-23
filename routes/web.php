@@ -9,6 +9,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HotSpotController;
 use App\Http\Controllers\MessageBoardItemController;
 use App\Http\Controllers\RuleController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +27,8 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+
+
 Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
@@ -35,7 +38,8 @@ Route::get('/dashboard', [HomeController::class, 'dashboard'])->middleware(['aut
 Route::group(['middleware' => ['role:admin']], function () {
     Route::get('/admin/messages', [AdminMessageBoardItemController::class, 'index'])->name('admin.messages.index');
     Route::get('/admin/messages/{id}', [AdminMessageBoardItemController::class, 'show'])->name('admin.messages.show');
-    Route::post('/admin/messages/update/{id}', [AdminMessageBoardItemController::class, 'update'])->name('admin.messages.update');
+    Route::post('/admin/messages/{id}/update', [AdminMessageBoardItemController::class, 'update'])->name('admin.messages.update');
+    Route::get('/admin/messages/{id}/edit', [AdminMessageBoardItemController::class, 'edit'])->name('admin.messages.edit');
 
     Route::get('/admin/hotspots', [AdminHotSpotController::class, 'index'])->name('admin.hotspots.index');
     Route::get('/admin/hotspots/{id}/edit', [AdminHotSpotController::class, 'show'])->name('admin.hotspots.show');
@@ -50,6 +54,7 @@ Route::group(['middleware' => ['role:admin']], function () {
     Route::get('/admin/rules/destroy/{id}', [AdminRuleController::class, 'destroy'])->name('admin.rules.destroy');
 
     Route::get('/admin/contact', [AdminContactMessageController::class, 'index'])->name('admin.contact.index');
+    Route::get('/admin/contact/{contactMessage}/edit', [AdminContactMessageController::class, 'edit'])->name('admin.contact.edit');
 });
 
 

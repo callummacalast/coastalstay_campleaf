@@ -93,7 +93,7 @@ class HotSpotController extends Controller
     public function show($hotSpot)
     {
         $hotSpot = HotSpot::findOrFail($hotSpot);
-        $hotspots = HotSpot::all()->take(4);
+        $hotspots = HotSpot::all()->take(8);
 
 
 

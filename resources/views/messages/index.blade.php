@@ -21,7 +21,7 @@
                     <img class="w-12 h-12 rounded-full"
                         src="https://source.unsplash.com/random/?{{ $count }}&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" />
                     <div class="ml-2 mt-0.5">
-                        <span class="block font-medium text-base leading-snug text-white text-gray-50">Random</span>
+                        <span class="block font-medium text-base leading-snug text-white text-gray-50">Camper</span>
                         <span
                             class="block text-sm text-gray-500 text-gray-400 font-light leading-snug">{{ \Carbon\Carbon::parse($message->created_at)->diffForHumans() }}</span>
                     </div>

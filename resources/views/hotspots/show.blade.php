@@ -53,18 +53,64 @@
         </section>
         <div class="max-w-screen-xl p-5 mx-auto dark:bg-gray-800 dark:text-gray-100">
             <h3 class="text-3xl font-bold my-3">See more hotspots!</h3>
-            <div class="grid grid-cols-1 gap-5 lg:grid-cols-4 sm:grid-cols-2">
+            <div class="">
                 @php
                     $count = 0;
                 @endphp
+                <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+                <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+           
+                  <script type="text/javascript">
+                    $(document).ready(function(){
+                      $('.slider-wrap').slick({
+                        infinite: true,
+                        slidesToShow: 4,
+                        slidesToScroll: 2,
+                        autoplay: true,
+                        autoplaySpeed: 2000,
+                        dots: true,
+                        responsive: [
+                            {
+                            breakpoint: 1024,
+                            settings: {
+                                slidesToShow: 3,
+                                slidesToScroll: 3,
+                                infinite: true,
+                                dots: true
+                            }
+                            },
+                            {
+                            breakpoint: 600,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 2
+                            }
+                            },
+                            {
+                            breakpoint: 480,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
+                            }
+                            // You can unslick at a given breakpoint now by adding:
+                            // settings: "unslick"
+                            // instead of a settings object
+                        ]
+                      });
+                    });
+                  </script>
+            <div class="slider-wrap h-100">
                 @foreach ($hotspots as $hotspot)
-                    <div class="relative flex items-end justify-start w-full text-white text-left bg-center bg-cover h-96 bg-gray-500 hover:animate-pulse transition rounded-xl "
+                <div class="p-4">
+
+                    <div class="relative flex items-end justify-start w-full text-white text-left bg-center bg-cover h-96 bg-gray-500 hover:animate-pulse transition rounded-xl"
                         style="background-image: url(&quot;https://source.unsplash.com/random/240x320?{{ $count }}&quot;);">
                         <div
                             class="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b via-transparent from-gray-900 to-gray-900 rounded-lg shadow">
                         </div>
                         <div class="absolute top-0 left-0 right-0 flex items-center justify-between mx-5 mt-3">
-                            <a rel="noopener noreferrer" href="#"
+                            <a rel="noopener noreferrer" href=""
                                 class="px-3 py-2 text-xs font-semibold tracking-wider uppercase dark:text-gray-100 bgundefined">{{ $hotspot->name }}</a>
                             <div class="flex flex-col justify-start text-center dark:text-gray-100">
                                 <span class="text-3xl font-semibold leading-none tracking-wide">04</span>
@@ -80,9 +126,14 @@
                     @php
                         $count++;
                     @endphp
-                @endforeach
-
+                
             </div>
+
+                @endforeach
+                <div class="slick-dots-wrap"></div>
+            </div>
+
+
             <script type="text/javascript">
                 function initMap() {
                     const myLatLng = {
