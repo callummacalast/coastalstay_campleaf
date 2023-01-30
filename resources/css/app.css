@@ -3,6 +3,24 @@
 @tailwind utilities;
 
 
+body{
+    background: #f2ebd9;
+    
+}
+
+.off-white-bg{
+    background: #f2ebd9;
+
+}
+
+.custom-text{
+    color: #23423e;
+}
+
+.custom-orange{
+    background-color: #edab28;
+}
+
 .slick-dots{
     @apply flex justify-center;
 }
