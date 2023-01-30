@@ -4,26 +4,26 @@
             <a href="{{ route('message.index') }}" class="rounded shadow bg-blue-300 text-white p-3 my-5">Back To
                 Messages</a>
         </div>
-        <div class="px-5 py-4 bg-white bg-gray-800 shadow rounded-lg my-5">
+        <div class="px-5 py-4 bg-white  shadow rounded-lg my-5">
             <div class="flex mb-4">
                 <img class="w-12 h-12 rounded-full"
                     src="https://source.unsplash.com/random/?0&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80">
                 <div class="ml-2 mt-0.5">
-                    <span class="block font-medium text-base leading-snug text-white text-gray-50">Camper</span>
+                    <span class="block font-semibold text-base leading-snug custom-text">Camper</span>
                     <span
-                        class="block text-sm text-gray-500 text-gray-400 font-light leading-snug">{{ \Carbon\Carbon::parse($message->created_at)->diffForHumans() }}</span>
+                        class="block text-sm  font-semibold custom-text  leading-snug">{{ \Carbon\Carbon::parse($message->created_at)->diffForHumans() }}</span>
                 </div>
             </div>
             <a href="http://campsite-info-board.test/messages/1">
-                <h3 class="font-bold text-white mb-3">{{ $message->title }}</h3>
-                <p class="text-gray-800 text-gray-100 leading-snug md:leading-normal">
+                <h3 class="font-bold custom-text mb-3">{{ $message->title }}</h3>
+                <p class="custom-text leading-snug md:leading-normal">
                     {{ $message->message }}
                 </p>
             </a>
             <div class="flex justify-between items-center mt-5">
                 <div class="flex ">
                     <a href="http://campsite-info-board.test/messages/1/like">
-                        <svg class="p-0.5 h-6 w-6 rounded-full z-20 bg-white bg-gray-800 "
+                        <svg class="p-0.5 h-6 w-6 rounded-full z-20"
                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                             viewBox="0 0 16 16">
                             <defs>
@@ -56,7 +56,7 @@
                         </svg>
                     </a>
                     <span
-                        class="ml-1 text-gray-500 text-gray-400  font-light">{{ $message->likes == 0 ? '0' : $message->likes }}</span>
+                        class="ml-1   font-light">{{ $message->likes == 0 ? '0' : $message->likes }}</span>
                 </div>
             </div>
         </div>

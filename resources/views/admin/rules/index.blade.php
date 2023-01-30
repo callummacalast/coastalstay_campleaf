@@ -24,7 +24,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($rules as $rule)
+                @foreach ($campsiteRule as $rule)
                     <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                         <th scope="row"
                             class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
@@ -38,11 +38,13 @@
                         </td>
 
                         <td class="py-4 px-6">
-                            <a href="{{ route('admin.rules.show', $rule->id) }}"
-                                class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                            <a href="{{ route('admin.rules.destroy', $rule->id) }}"
-                                class="font-medium text-red-600 dark:text-blue-500 hover:underline"
-                                onclick="return confirm('Are you sure?')">Delete</a>
+                            <a href="{{ route('admin.rules.show', $rule->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                                Edit
+                            </a>
+                            <a href="{{ route('admin.rules.destroy', $rule->id) }}" class="font-medium text-red-600 dark:text-blue-500 hover:underline"
+                                onclick="return confirm('Are you sure?')">
+                                Delete
+                            </a>
                         </td>
 
                     </tr>
@@ -52,7 +54,7 @@
         </table>
     </div>
     <div class="paginate container mx-auto mt-10">
-        {{ $rules->links() }}
+        {{ $campsiteRule->links() }}
 
     </div>
 </x-app-layout>

@@ -13,7 +13,7 @@
                 <label for="title">Message</label>
                 <textarea rows="5" name="message" id="title" class="rounded border-none bg-gray-100 shadow"></textarea>
             </div>
-            <button type="submit" class="bg-blue-400 rounded shadow p-2 text-white my-3">Create Message!</button>
+            <button type="submit" class="bg-orange-400 rounded shadow p-2 text-white my-3">Create Message!</button>
         </form>
     </div>
 

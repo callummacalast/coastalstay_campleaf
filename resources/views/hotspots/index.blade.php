@@ -5,6 +5,10 @@
             <div>
                 <h3 class="font-bold text-3xl">Our Hotspots</h3>
                 <span class="text-sm">Use the filter button to toggle view from list to map view!</span>
+                <div class="leave-message my-4">
+                    <a href="{{ route('hotspot.create') }}"
+                        class="bg-blue-400 p-3 text-white rounded shadow hover:bg-blue-300 transition">Add Hotspot</a>
+                </div>
             </div>
             <div>
                 <button id="list-view-btn" class="hidden ">
@@ -25,10 +29,7 @@
                 </button>
             </div>
         </div>
-        <div class="leave-message fixed right-5 bottom-5 z-50">
-            <a href="{{ route('hotspot.create') }}"
-                class="bg-blue-400 p-3 text-white rounded shadow hover:bg-blue-300 transition">Add Hotspot</a>
-        </div>
+     
         <div class="" id="hotspot-list">
             <div class="max-w-screen-xl p-5 mx-auto ">
                 <div class="grid grid-cols-1 gap-5 lg:grid-cols-4 sm:grid-cols-2">
@@ -77,11 +78,6 @@
             </div>
         </div>
     </div>
-    @if (App::environment('production'))
-        in "production" environment
-    @else
-        in "testing" environment
-    @endif
     <div id="hotspot-map" class="hidden container  m-3 w-full">
         <div class="container mt-5 h-full">
             <div id="map" style="height: 600px; width: 100%;" class="shadow rounded"></div>
@@ -94,7 +90,7 @@
                     lng: -5.18128
                 };
                 const map = new google.maps.Map(document.getElementById("map"), {
-                    zoom: 9,
+                    zoom: 10,
                     center: myLatLng,
                 });
                 var infowindow = new google.maps.InfoWindow();

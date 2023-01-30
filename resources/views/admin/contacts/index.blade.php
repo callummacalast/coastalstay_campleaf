@@ -40,8 +40,8 @@
                             {{ Str::limit($message->message, 60) }}
                         </td>
                         <td class="py-4 px-6">
-                            <a href="#"
-                                class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                            <a href="{{ route('admin.contact.show', ['contactMessage' => $message])}}"
+                                class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
                         </td>
                     </tr>
                 @endforeach

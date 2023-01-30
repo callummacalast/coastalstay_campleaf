@@ -1,34 +1,34 @@
 <x-guest-layout>
     <div class="container mx-auto m-5">
-        <div class="leave-message fixed right-5 bottom-5 z-50">
-            <a href="{{ route('message.create') }}"
-                class="bg-blue-400 p-3 text-white rounded shadow hover:bg-blue-300 transition">Leave a message</a>
-        </div>
-        <h2 class="m-5 text-5xl text-center">Message Board</h3>
-            <div class="pagination w-full">
-                {{ $messages->links() }}
+       
+        <h2 class="my-5 text-5xl custom-text font-bold ">Message Board</h3>
+            <div class="leave-message my-5">
+                <p class="my-5">Welcome to the message board, please feel free to express yourself, perhaps about your stay or anything else. Take a look at other campers messages for inspiration.</p>
+                <a href="{{ route('message.create') }}"
+                    class="bg-orange-400 my-5 p-3 text-white rounded shadow hover:bg-orange-300 transition">Leave a message</a>
             </div>
+           
     </div>
     <div
-        class="p-8 bg-gray-50 bg-gray-900 flex items-center justify-center  grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
+        class="p-8  flex items-center justify-center  grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
         @php
             $count = 0;
         @endphp
         @foreach ($messages as $message)
             <div
-                class="px-5 py-4 bg-white bg-gray-800 shadow rounded-lg max-w-lg  hover:shadow-xl hover:scale-105 transition cursor-pointer">
+                class="px-5 py-4 bg-white shadow rounded-lg max-w-lg  hover:shadow-xl hover:scale-105 transition cursor-pointer">
                 <div class="flex mb-4">
                     <img class="w-12 h-12 rounded-full"
                         src="https://source.unsplash.com/random/?{{ $count }}&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" />
                     <div class="ml-2 mt-0.5">
-                        <span class="block font-medium text-base leading-snug text-white text-gray-50">Camper</span>
+                        <span class="block  text-base leading-snug text-white custom-text font-bold">Camper</span>
                         <span
-                            class="block text-sm text-gray-500 text-gray-400 font-light leading-snug">{{ \Carbon\Carbon::parse($message->created_at)->diffForHumans() }}</span>
+                            class="block text-sm custom-text font-semibold leading-snug">{{ \Carbon\Carbon::parse($message->created_at)->diffForHumans() }}</span>
                     </div>
                 </div>
                 <a href="{{ route('message.show', $message->id) }}">
-                    <h3 class="text-white font-bold mb-2">{{ $message->title }}</h3>
-                    <p class="text-gray-800 text-gray-100 leading-snug md:leading-normal">
+                    <h3 class=" custom-text font-semibold mb-2">{{ $message->title }}</h3>
+                    <p class="custom-text leading-snug md:leading-normal">
                         {{ Str::limit($message->message, 200) }}
                     </p>
                 </a>
@@ -64,7 +64,7 @@
                             </svg>
                         </a>
                         <span
-                            class="ml-1 text-gray-500 text-gray-400  font-light">{{ $message->likes == 0 ? '0' : $message->likes }}</span>
+                            class="ml-1 custom-text text-gray-400  font-light">{{ $message->likes == 0 ? '0' : $message->likes }}</span>
                     </div>
                 </div>
             </div>
@@ -73,6 +73,8 @@
             @endphp
         @endforeach
 
-
+        <div class="pagination w-full">
+            {{ $messages->links() }}
+        </div>
     </div>
 </x-guest-layout>

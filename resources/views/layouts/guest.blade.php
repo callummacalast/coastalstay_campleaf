@@ -16,10 +16,10 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class="bg-gray-50">
-    <nav class="relative px-4 py-4 flex justify-between items-center bg-white shadow">
+<body>
+    <nav class="relative px-4 py-4 flex justify-between items-center shadow">
         <a class="text-3xl font-bold leading-none" href="{{ url('/') }}">
-            <img src="https://www.coastalstay.co.uk/coastal-stay-logo-white-min.png" height="30px"
+            <img src="https://www.coastalstay.co.uk/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcoastal-stay-gray-v2.c90f426a.png&w=384&q=75" height="30px"
                 style="filter: invert(1); height: 50px!important; width: 68px!important;" alt="">
         </a>
         <div class="lg:hidden">
@@ -32,7 +32,7 @@
         </div>
         <ul
             class="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">
-            <li><a class="{{ request()->is('/') ? 'text-blue-600 font-bold' : '' }} text-sm text-gray-400 hover:text-blue-500  "
+            <li><a class="{{ request()->is('/') ? 'text-blue-600 font-bold' : '' }} text-sm custom-text hover:underline  "
                     href="{{ url('/') }}">Home</a>
             </li>
             <li class="text-gray-300">
@@ -42,7 +42,7 @@
                         d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
                 </svg>
             </li>
-            <li><a class="{{ request()->is('hotspots') ? 'text-blue-600 font-bold' : '' }} text-sm text-gray-400 hover:text-blue-500 "
+            <li><a class="{{ request()->is('hotspots') ? 'text-blue-600 font-bold' : '' }} text-sm custom-text hover:underline "
                     href="{{ route('hotspot.index') }}">Hot Spots</a></li>
             <li class="text-gray-300">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
@@ -51,7 +51,7 @@
                         d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
                 </svg>
             </li>
-            <li><a class="text-sm text-gray-400 hover:text-blue-500  {{ request()->is('messages') ? 'text-blue-600 font-bold' : '' }}"
+            <li><a class="text-sm custom-text hover:underline  {{ request()->is('messages') ? 'text-blue-600 font-bold' : '' }}"
                     href="{{ route('message.index') }}">Message
                     Board</a></li>
             <li class="text-gray-300">
@@ -61,7 +61,7 @@
                         d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
                 </svg>
             </li>
-            <li><a class=" {{ request()->is('rules') ? 'text-blue-600 font-bold' : '' }} text-sm text-gray-400 hover:text-blue-500 "
+            <li><a class=" {{ request()->is('rules') ? 'text-blue-600 font-bold' : '' }} text-sm custom-text hover:underline "
                     href="{{ route('rules.index') }}">Rules</a></li>
             <li class="text-gray-300">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
@@ -70,7 +70,7 @@
                         d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
                 </svg>
             </li>
-            <li><a class="{{ request()->is('contact') ? 'text-blue-600 font-bold' : '' }} text-sm text-gray-400 hover:text-blue-500 "
+            <li><a class="{{ request()->is('contact') ? 'text-blue-600 font-bold' : '' }} text-sm custom-text hover:underline "
                     href="{{ route('contact.index') }}">Contact</a>
             </li>
         </ul>
@@ -93,11 +93,11 @@
             class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
             <div class="flex items-center mb-8">
                 <a class="mr-auto text-3xl font-bold leading-none" href="{{ url('/') }}">
-                    <img src="https://www.coastalstay.co.uk/coastal-stay-logo-white-min.png" height="30px"
+                    <img src="https://www.coastalstay.co.uk/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcoastal-stay-gray-v2.c90f426a.png&w=384&q=75                    " height="30px"
                         style="filter: invert(1); height: 50px!important; width: 68px!important;" alt="">
                 </a>
                 <button class="navbar-close">
-                    <svg class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500"
+                    <svg class="h-6 w-6 custom-text cursor-pointer hover:custom-text"
                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M6 18L18 6M6 6l12 12">
@@ -108,23 +108,23 @@
             <div>
                 <ul>
                     <li class="mb-1">
-                        <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+                        <a class="block p-4 text-sm font-semibold custom-text hover:bg-blue-50 hover:text-blue-600 rounded"
                             href="/">Home</a>
                     </li>
                     <li class="mb-1">
-                        <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+                        <a class="block p-4 text-sm font-semibold custom-text hover:bg-blue-50 hover:text-blue-600 rounded"
                             href="{{ route('hotspot.index') }}">Hot Spots</a>
                     </li>
                     <li class="mb-1">
-                        <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+                        <a class="block p-4 text-sm font-semibold custom-text hover:bg-blue-50 hover:text-blue-600 rounded"
                             href="{{ route('message.index') }}">Message Board</a>
                     </li>
                     <li class="mb-1">
-                        <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+                        <a class="block p-4 text-sm font-semibold custom-text hover:bg-blue-50 hover:text-blue-600 rounded"
                             href="{{ route('rules.index') }}">Rules</a>
                     </li>
                     <li class="mb-1">
-                        <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+                        <a class="block p-4 text-sm font-semibold custom-text hover:bg-blue-50 hover:text-blue-600 rounded"
                             href="{{ route('contact.index') }}">Contact</a>
                     </li>
                 </ul>
@@ -145,7 +145,7 @@
                                 d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z" />
                         </svg></a>
                 </div>
-                <p class="my-4 text-xs text-center text-gray-400">
+                <p class="my-4 text-xs text-center custom-text">
                     <span>Copyright © {{ date('Y') }}</span>
                 </p>
             </div>
@@ -200,43 +200,43 @@
 
     <!-- component -->
     <!-- Foooter -->
-    <section class="bg-white">
+    <section class="custom-orange">
         <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
             <nav class="flex flex-wrap justify-center -mx-5 -my-2">
                 <div class="px-5 py-2">
-                    <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
+                    <a href="#" class="text-base leading-6 custom-text hover:text-gray-900">
                         Home
                     </a>
                 </div>
                 <div class="px-5 py-2">
-                    <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
+                    <a href="#" class="text-base leading-6 custom-text hover:text-gray-900">
                         Message Board
                     </a>
                 </div>
                 <div class="px-5 py-2">
-                    <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
+                    <a href="#" class="text-base leading-6 custom-text hover:text-gray-900">
                         Rules
                     </a>
                 </div>
                 <div class="px-5 py-2">
-                    <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
+                    <a href="#" class="text-base leading-6 custom-text hover:text-gray-900">
                         Hotspots
                     </a>
                 </div>
                 <div class="px-5 py-2">
-                    <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
+                    <a href="#" class="text-base leading-6 custom-text hover:text-gray-900">
                         Contact
                     </a>
                 </div>
                 <div class="px-5 py-2">
-                    <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
+                    <a href="#" class="text-base leading-6 custom-text hover:text-gray-900">
                         Privacy Policy
                     </a>
                 </div>
             </nav>
             <div class="flex justify-center mt-8 space-x-6">
                 <a href="https://www.facebook.com/coastalstay" target="__blank"
-                    class="text-gray-400 hover:text-gray-500">
+                    class="custom-text hover:custom-text">
                     <span class="sr-only">Facebook</span>
                     <svg class="w-6 h-6" aria-hidden="true" fill="blue" viewBox="0 0 24 24">
                         <path fill-rule="evenodd"
@@ -245,7 +245,7 @@
                     </svg>
                 </a>
                 <a href="https://www.instagram.com/coastalstay/" target="__blank"
-                    class="text-gray-400 hover:text-gray-500">
+                    class="custom-text hover:custom-text">
                     <span class="sr-only">Instagram</span>
                     <svg class="w-6 h-6" aria-hidden="true" fill="purple" viewBox="0 0 24 24">
                         <path fill-rule="evenodd"
@@ -253,7 +253,7 @@
                             clip-rule="evenodd"></path>
                     </svg>
                 </a>
-                {{-- <a href="#" class="text-gray-400 hover:text-gray-500">
+                {{-- <a href="#" class="custom-text hover:custom-text">
                     <span class="sr-only">Twitter</span>
                     <svg class="w-6 h-6" aria-hidden="true" fill="lightblue" viewBox="0 0 24 24">
                         <path
@@ -261,7 +261,7 @@
                         </path>
                     </svg>
                 </a>
-                <a href="#" class="text-gray-400 hover:text-gray-500">
+                <a href="#" class="custom-text hover:custom-text">
                     <span class="sr-only">GitHub</span>
                     <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
                         <path fill-rule="evenodd"
@@ -271,8 +271,8 @@
                 </a> --}}
 
             </div>
-            <p class="mt-8 text-base leading-6 text-center text-gray-400">
-                © {{ date('Y') }} <a href="https://www.coastalstay.co.uk/" class="text-gray-900"
+            <p class="mt-8 text-base leading-6 text-center custom-text">
+                © {{ date('Y') }} <a href="https://www.coastalstay.co.uk/" class="custom-text"
                     target="__blank">coastalstay.co.uk.</a> All rights
                 reserved.
             </p>
