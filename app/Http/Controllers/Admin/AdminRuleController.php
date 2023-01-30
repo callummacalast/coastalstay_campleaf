@@ -9,33 +9,29 @@ use Illuminate\Support\Facades\Redirect;
 
 class AdminRuleController extends Controller
 {
-    public function index()
+    public function index(CampsiteRule $campsiteRule)
     {
-        $rules = CampsiteRule::paginate(5);
-
-
-        return view('admin.rules.index', compact('rules'));
+        $campsiteRule = CampsiteRule::paginate(10);
+        return view('admin.rules.index', compact('campsiteRule'));
     }
 
-    public function show($rule)
+    public function show(CampsiteRule $campsiteRule)
     {
-        $rule = CampsiteRule::find($rule);
-
-        return view('admin.rules.show', compact('rule'));
+        return view('admin.rules.show', compact('campsiteRule'));
     }
 
-    public function store(Request $request)
+    public function store(Request $request, CampsiteRule $campsiteRule)
     {
         $validated = $request->validate([
             'title' => 'required',
             'rule' => 'required'
         ]);
 
-        $rule = new CampsiteRule;
+        $campsiteRule = new CampsiteRule;
 
-        $rule->fill($validated);
+        $campsiteRule->fill($validated);
 
-        $rule->save();
+        $campsiteRule->save();
         return Redirect::route('admin.rules.index')->with('success', 'Rule Created');
     }
 
@@ -44,27 +40,20 @@ class AdminRuleController extends Controller
         return view('admin.rules.create');
     }
 
-    public function destroy($rule)
+    public function destroy(CampsiteRule $campsiteRule)
     {
-        $rule = CampsiteRule::findOrFail($rule);
-
-        $rule->delete();
-
+        $campsiteRule->delete();
         return Redirect::route('admin.rules.index')->with('success', 'Rule Deleted');
     }
 
-    public function update(Request $request, $rule)
+    public function update(Request $request, CampsiteRule $campsiteRule)
     {
         $validated = $request->validate([
             'title' => 'required',
             'rule' => 'required'
         ]);
-
-        $rule = CampsiteRule::findOrFail($rule);
-
-        $rule->fill($validated);
-
-        $rule->update();
+        $campsiteRule->fill($validated);
+        $campsiteRule->update();
 
         return Redirect::route('admin.rules.index')->with('success', 'Rule Updated');
     }
