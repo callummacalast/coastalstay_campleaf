@@ -15,9 +15,14 @@ class AdminContactMessageController extends Controller
         return view('admin.contacts.index', compact('contact_messages'));
     }
 
-    public function edit(ContactMessage $contactMessage)
+    public function show(ContactMessage $contactMessage)
     {
         
-        return view('admin.contacts.edit', compact('contactMessage'));
+        return view('admin.contacts.show', compact('contactMessage'));
+    }
+
+    public function destroy(ContactMessage $contactMessage)   
+    {
+        dd($contactMessage);
     }
 }
