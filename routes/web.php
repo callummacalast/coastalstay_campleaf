@@ -32,14 +32,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/welcome-pack', [HomeController::class, 'welcomePack'])->name('welcome.pack');
 
 
 
 Route::group(['middleware' => ['role:admin']], function () {
     Route::get('/admin/messages', [AdminMessageBoardItemController::class, 'index'])->name('admin.messages.index');
-    Route::get('/admin/messages/{id}', [AdminMessageBoardItemController::class, 'show'])->name('admin.messages.show');
-    Route::post('/admin/messages/{id}/update', [AdminMessageBoardItemController::class, 'update'])->name('admin.messages.update');
-    Route::get('/admin/messages/{id}/edit', [AdminMessageBoardItemController::class, 'edit'])->name('admin.messages.edit');
+    // Route::get('/admin/messages/{messageBoardItem}', [AdminMessageBoardItemController::class, 'show'])->name('admin.messages.show');
+    Route::post('/admin/messages/{messageBoardItem}/update', [AdminMessageBoardItemController::class, 'update'])->name('admin.messages.update');
+    Route::get('/admin/messages/{messageBoardItem}/edit', [AdminMessageBoardItemController::class, 'edit'])->name('admin.messages.edit');
+    Route::get('/admin/messages/{messageBoardItem}/destroy', [AdminMessageBoardItemController::class, 'destroy'])->name('admin.messages.delete');
 
     Route::get('/admin/hotspots', [AdminHotSpotController::class, 'index'])->name('admin.hotspots.index');
     Route::get('/admin/hotspots/{id}/edit', [AdminHotSpotController::class, 'show'])->name('admin.hotspots.show');
@@ -48,13 +50,15 @@ Route::group(['middleware' => ['role:admin']], function () {
     Route::get('/admin/rules', [AdminRuleController::class, 'index'])->name('admin.rules.index');
     Route::post('/admin/rules/create', [AdminRuleController::class, 'create'])->name('admin.rules.create');
 
-    Route::get('/admin/rules/{id}', [AdminRuleController::class, 'show'])->name('admin.rules.show');
-    Route::post('/admin/rules/update/{id}', [AdminRuleController::class, 'update'])->name('admin.rules.update');
+    Route::get('/admin/rules/{campsiteRule}', [AdminRuleController::class, 'show'])->name('admin.rules.show');
+    Route::post('/admin/rules/{campsiteRule}/update', [AdminRuleController::class, 'update'])->name('admin.rules.update');
     Route::post('/admin/rules/store', [AdminRuleController::class, 'store'])->name('admin.rules.store');
-    Route::get('/admin/rules/destroy/{id}', [AdminRuleController::class, 'destroy'])->name('admin.rules.destroy');
+    Route::get('/admin/rules/{campsiteRule}/destroy', [AdminRuleController::class, 'destroy'])->name('admin.rules.destroy');
 
     Route::get('/admin/contact', [AdminContactMessageController::class, 'index'])->name('admin.contact.index');
-    Route::get('/admin/contact/{contactMessage}/edit', [AdminContactMessageController::class, 'edit'])->name('admin.contact.edit');
+
+    Route::get('/admin/contact/{contactMessage}', [AdminContactMessageController::class, 'show'])->name('admin.contact.show');
+    Route::post('/admin/contact/{contactMessage}/delete', [AdminContactMessageController::class, 'destroy'])->name('admin.contact.destroy');
 });
 
 
