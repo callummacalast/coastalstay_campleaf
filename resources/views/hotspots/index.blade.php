@@ -7,7 +7,7 @@
                 <span class="text-sm">Use the filter button to toggle view from list to map view!</span>
                 <div class="leave-message my-4">
                     <a href="{{ route('hotspot.create') }}"
-                        class="bg-blue-400 p-3 text-white rounded shadow hover:bg-blue-300 transition">Add Hotspot</a>
+                        class="bg-blue-400 p-3 text-white rounded shadow custom-orange transition">Add Hotspot</a>
                 </div>
             </div>
             <div>

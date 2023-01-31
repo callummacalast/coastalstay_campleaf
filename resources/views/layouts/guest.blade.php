@@ -62,7 +62,7 @@
                 </svg>
             </li>
             <li><a class=" {{ request()->is('rules') ? 'text-blue-600 font-bold' : '' }} text-sm custom-text hover:underline "
-                    href="{{ route('rules.index') }}">Rules</a></li>
+                    href="{{ route('rules.index') }}">Local Activities / Amenities</a></li>
             <li class="text-gray-300">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
                     class="w-4 h-4 current-fill" viewBox="0 0 24 24">
@@ -121,7 +121,7 @@
                     </li>
                     <li class="mb-1">
                         <a class="block p-4 text-sm font-semibold custom-text hover:bg-blue-50 hover:text-blue-600 rounded"
-                            href="{{ route('rules.index') }}">Rules</a>
+                            href="{{ route('rules.index') }}">Local Activities / Amenities</a>
                     </li>
                     <li class="mb-1">
                         <a class="block p-4 text-sm font-semibold custom-text hover:bg-blue-50 hover:text-blue-600 rounded"
@@ -215,7 +215,7 @@
                 </div>
                 <div class="px-5 py-2">
                     <a href="#" class="text-base leading-6 custom-text hover:text-gray-900">
-                        Rules
+                        Local Activities / Amenities
                     </a>
                 </div>
                 <div class="px-5 py-2">

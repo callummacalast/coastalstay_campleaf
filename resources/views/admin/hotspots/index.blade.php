@@ -2,13 +2,13 @@
 
     <div class="container mx-auto mt-32">
 
-        <h3 class="m-5">hotspots</h3>
-        <div class="pagination w-full">
+        <h3 class="m-5 text-3xl font-bold ">Hotspots</h3>
+        <div class="pagination w-full py-5">
             {{ $hotspots->links() }}
         </div>
 
 
-        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 my-5">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                     <th scope="col" class="py-3 px-6">
@@ -46,8 +46,8 @@
                         <td class="py-4 px-6">
                             <a href="{{ route('admin.hotspots.show', $hotspot->id) }}"
                                 class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                            <a href="#"
-                                class="font-medium text-red-600 dark:text-blue-500 hover:underline">Delete</a>
+                            <a href="{{ route('admin.hotspots.destroy', $hotspot)}}"
+                                class="font-medium text-red-600 dark:text-blue-500 hover:underline" onclick="return confirm('Are you sure?')">Delete</a>
                         </td>
                         <td class="py-4 px-6">
                             @if ($hotspot->status == 'pending')

@@ -1,25 +1,35 @@
 <x-guest-layout>
 
     <section class="bg-white off-white-bg relative overlay">
-
-        <div class="container px-6 py-10 mx-auto z-50">
-
-            <div class="container mx-auto flex flex-col items-center px-4 py-3 text-center w-3/4">
-                <h1 class="text-4xl font-bold leading-none sm:text-5xl">Welcome to
-                    <span class="dark:text-sky-400">Coastal Stay</span> Campsite
-                </h1>
-                <p class="px-8 mt-8 mb-12 text-lg">We are thrilled to have you here, lets get straight to the good stuff!
-                    Hit the welcome pack button and find all your essentials!</p>
-                <div class="flex flex-wrap justify-center">
-                    <a href="{{ route('welcome.pack') }}"
-                        class="px-8 py-3 m-2 text-lg font-semibold rounded hover:bg-white custom-text"
-                        style="background: #edab28;">I am camping!</a>
-                    <a href="{{ route('welcome.pack') }}"
-                        class="px-8 py-3 m-2 text-lg font-semibold rounded hover:bg-white custom-text"
-                        style="background: #edab28;">I am B&B!</a>
+        <div class="">
+            <div class="relative overflow-hidden bg-no-repeat bg-cover" style="
+                  background-position: 50%;
+                  background-image: url('https://i.pinimg.com/originals/31/51/9a/31519af0e4067aaf0f3d5eb2a58ad7bf.jpg');
+                  height: 500px;
+                ">
+              <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
+                style="background-color: rgba(0, 0, 0, 0.75)">
+                <div class="flex justify-center items-center h-full">
+                  <div class="text-center text-white px-6 md:px-12">
+                    <h1 class="text-4xl font-bold leading-none sm:text-5xl">Welcome to
+                        <span class="dark:text-sky-400">Coastal Stay</span> Campsite
+                    </h1>
+                    <p class="px-8 mt-8 mb-12 text-lg">We are thrilled to have you here, lets get straight to the good stuff!
+                        Hit the welcome pack button and find all your essentials!</p>
+                    <div class="flex flex-wrap justify-center">
+                        <a href="{{ route('welcome.camping') }}"
+                            class="px-8 py-3 m-2 text-lg font-semibold rounded hover:bg-white custom-text"
+                            style="background: #edab28;">I am camping!</a>
+                        <a href="{{ route('welcome.bb') }}"
+                            class="px-8 py-3 m-2 text-lg font-semibold rounded hover:bg-white custom-text"
+                            style="background: #edab28;">I am B&B!</a>
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
-
+        </div>
+        <div class="container px-6 py-10 mx-auto z-50">
             <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3">
                 <div class="p-8 space-y-3 border-2 border-orange-400 shadow border-blue-300 rounded-xl bg-white">
                     <span class="inline-block text-orange-500 text-blue-400">

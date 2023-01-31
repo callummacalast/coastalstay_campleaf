@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <div class="container mx-auto m-5">
+    <div class="container p-8 my-5">
        
         <h2 class="my-5 text-5xl custom-text font-bold ">Message Board</h3>
             <div class="leave-message my-5">

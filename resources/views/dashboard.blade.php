@@ -23,7 +23,7 @@
                                     </div>
                                 </div>
                                 <div class="flex-1 text-right md:text-center">
-                                    <h5 class="font-bold uppercase text-gray-500">Total Messages</h5>
+                                    <h5 class="font-bold uppercase text-gray-500">Total Messages Board Items</h5>
                                     <h3 class="font-bold text-3xl">{{ count($messages) }} <span class="text-green-500"><i
                                                 class="fas fa-caret-up"></i></span></h3>
                                 </div>
@@ -139,7 +139,7 @@
                 <!--Divider-->
                 <hr class="border-b-2 border-gray-400 my-8 mx-4">
 
-                <div class="flex flex-row flex-wrap flex-grow mt-2">
+                {{-- <div class="flex flex-row flex-wrap flex-grow mt-2">
 
                     <div class="w-full md:w-1/2 p-3">
                         <!--Graph Card-->
@@ -288,7 +288,7 @@
 
 
 
-                </div>
+                </div> --}}
 
                 <!--/ Console Content-->
 
