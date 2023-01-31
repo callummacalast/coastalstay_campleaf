@@ -32,7 +32,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/welcome-pack', [HomeController::class, 'welcomePack'])->name('welcome.pack');
+Route::get('/bb/welcome-pack', [HomeController::class, 'welcomeBandb'])->name('welcome.bb');
+Route::get('/camping/welcome-pack', [HomeController::class, 'welcomeCamping'])->name('welcome.camping');
+Route::get('/local-amenities', [HomeController::class, 'localAmenities'])->name('amenities.index');
 
 
 
@@ -46,9 +48,10 @@ Route::group(['middleware' => ['role:admin']], function () {
     Route::get('/admin/hotspots', [AdminHotSpotController::class, 'index'])->name('admin.hotspots.index');
     Route::get('/admin/hotspots/{id}/edit', [AdminHotSpotController::class, 'show'])->name('admin.hotspots.show');
     Route::post('/admin/hotspots/update/{id}', [AdminHotSpotController::class, 'update'])->name('admin.hotspots.update');
+    Route::get('/admin/hotspots/{hotspot}/delete', [AdminHotSpotController::class, 'destroy'])->name('admin.hotspots.destroy');
 
     Route::get('/admin/rules', [AdminRuleController::class, 'index'])->name('admin.rules.index');
-    Route::post('/admin/rules/create', [AdminRuleController::class, 'create'])->name('admin.rules.create');
+    Route::get('/admin/rules/create', [AdminRuleController::class, 'create'])->name('admin.rules.create');
 
     Route::get('/admin/rules/{campsiteRule}', [AdminRuleController::class, 'show'])->name('admin.rules.show');
     Route::post('/admin/rules/{campsiteRule}/update', [AdminRuleController::class, 'update'])->name('admin.rules.update');
