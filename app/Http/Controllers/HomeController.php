@@ -48,8 +48,18 @@ class HomeController extends Controller
     }
 
 
-    public function welcomePack()
+    public function welcomeBandb()
     {
         return view('welcome.bedandbreakfast.index');
+    }
+
+    public function welcomeCamping()
+    {
+        return view('welcome.camping.index');
+    }
+
+    public function localAmenities()
+    {
+        return view('amenities.index');
     }
 }
