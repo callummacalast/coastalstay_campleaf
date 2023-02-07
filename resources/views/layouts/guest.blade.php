@@ -61,8 +61,8 @@
                         d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
                 </svg>
             </li>
-            <li><a class=" {{ request()->is('rules') ? 'text-blue-600 font-bold' : '' }} text-sm custom-text hover:underline "
-                    href="{{ route('rules.index') }}">Local Activities / Amenities</a></li>
+            <li><a class=" {{ request()->is('local-amenities') ? 'text-blue-600 font-bold' : '' }} text-sm custom-text hover:underline "
+                    href="{{ route('amenities.index') }}">Local Activities / Amenities</a></li>
             <li class="text-gray-300">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
                     class="w-4 h-4 current-fill" viewBox="0 0 24 24">
@@ -121,7 +121,7 @@
                     </li>
                     <li class="mb-1">
                         <a class="block p-4 text-sm font-semibold custom-text hover:bg-blue-50 hover:text-blue-600 rounded"
-                            href="{{ route('rules.index') }}">Local Activities / Amenities</a>
+                            href="{{ route('amenities.index') }}">Local Activities / Amenities</a>
                     </li>
                     <li class="mb-1">
                         <a class="block p-4 text-sm font-semibold custom-text hover:bg-blue-50 hover:text-blue-600 rounded"
@@ -204,33 +204,28 @@
         <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
             <nav class="flex flex-wrap justify-center -mx-5 -my-2">
                 <div class="px-5 py-2">
-                    <a href="#" class="text-base leading-6 custom-text hover:text-gray-900">
+                    <a href="{{ route('home') }}" class="text-base leading-6 custom-text hover:text-gray-900">
                         Home
                     </a>
                 </div>
                 <div class="px-5 py-2">
-                    <a href="#" class="text-base leading-6 custom-text hover:text-gray-900">
+                    <a href="{{ route('message.index') }}" class="text-base leading-6 custom-text hover:text-gray-900">
                         Message Board
                     </a>
                 </div>
                 <div class="px-5 py-2">
-                    <a href="#" class="text-base leading-6 custom-text hover:text-gray-900">
+                    <a href="{{ route('amenities.index') }}" class="text-base leading-6 custom-text hover:text-gray-900">
                         Local Activities / Amenities
                     </a>
                 </div>
                 <div class="px-5 py-2">
-                    <a href="#" class="text-base leading-6 custom-text hover:text-gray-900">
+                    <a href="{{ route('hotspot.index') }}" class="text-base leading-6 custom-text hover:text-gray-900">
                         Hotspots
                     </a>
                 </div>
                 <div class="px-5 py-2">
-                    <a href="#" class="text-base leading-6 custom-text hover:text-gray-900">
+                    <a href="{{ route('contact.index') }}" class="text-base leading-6 custom-text hover:text-gray-900">
                         Contact
-                    </a>
-                </div>
-                <div class="px-5 py-2">
-                    <a href="#" class="text-base leading-6 custom-text hover:text-gray-900">
-                        Privacy Policy
                     </a>
                 </div>
             </nav>
