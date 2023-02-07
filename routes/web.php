@@ -65,17 +65,12 @@ Route::group(['middleware' => 'role:admin', 'name' => 'admin', 'prefix' => 'admi
     Route::post('/contact/{contactMessage}/delete', [AdminContactMessageController::class, 'destroy'])->name('admin.contact.destroy');
 })->name('admin');
 
-
-
-
-
 Route::controller(HotSpotController::class)->group(function () {
     Route::get('/hotspots', 'index')->name('hotspot.index');
     Route::get('/hotspots/create', 'create')->name('hotspot.create');
     Route::get('/hotspot/{id}', 'show')->name('hotspot.show');
     Route::post('/hotspots/store', 'store')->name('hotspot.store');
 });
-
 
 Route::controller(MessageBoardItemController::class)->group(function () {
     Route::get('/messages', 'index')->name('message.index');

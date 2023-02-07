@@ -2,31 +2,33 @@
 
     <section class="bg-white off-white-bg relative overlay">
         <div class="">
-            <div class="relative overflow-hidden bg-no-repeat bg-cover" style="
+            <div class="relative overflow-hidden bg-no-repeat bg-cover"
+                style="
                   background-position: 50%;
                   background-image: url('https://i.pinimg.com/originals/31/51/9a/31519af0e4067aaf0f3d5eb2a58ad7bf.jpg');
                   height: 500px;
                 ">
-              <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
-                style="background-color: rgba(0, 0, 0, 0.75)">
-                <div class="flex justify-center items-center h-full">
-                  <div class="text-center text-white px-6 md:px-12">
-                    <h1 class="text-4xl font-bold leading-none sm:text-5xl">Welcome to
-                        <span class="dark:text-sky-400">Coastal Stay</span> Campsite
-                    </h1>
-                    <p class="px-8 mt-8 mb-12 text-lg">We are thrilled to have you here, lets get straight to the good stuff!
-                        Hit the welcome pack button and find all your essentials!</p>
-                    <div class="flex flex-wrap justify-center">
-                        <a href="{{ route('welcome.camping') }}"
-                            class="px-8 py-3 m-2 text-lg font-semibold rounded hover:bg-white custom-text"
-                            style="background: #edab28;">I am camping!</a>
-                        <a href="{{ route('welcome.bb') }}"
-                            class="px-8 py-3 m-2 text-lg font-semibold rounded hover:bg-white custom-text"
-                            style="background: #edab28;">I am B&B!</a>
+                <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
+                    style="background-color: rgba(0, 0, 0, 0.75)">
+                    <div class="flex justify-center items-center h-full">
+                        <div class="text-center text-white px-6 md:px-12">
+                            <h1 class="text-5xl font-bold leading-none sm:text-5xl">Welcome to
+                                <span class="dark:text-sky-400">Coastal Stay</span> Campsite
+                            </h1>
+                            <p class="px-8 mt-8 mb-12 w-3/4 mx-auto text-xl">We are thrilled to have you here, lets get straight to
+                                the good stuff!
+                                Hit the welcome pack button and find all your essentials!</p>
+                            <div class="flex flex-wrap justify-center">
+                                <a href="{{ route('welcome.camping') }}"
+                                    class="px-8 py-3 m-2 text-lg font-semibold rounded hover:bg-white custom-text"
+                                    style="background: #edab28;">I am camping!</a>
+                                <a href="{{ route('welcome.bb') }}"
+                                    class="px-8 py-3 m-2 text-lg font-semibold rounded hover:bg-white custom-text"
+                                    style="background: #edab28;">I am B&B!</a>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
             </div>
         </div>
         <div class="container px-6 py-10 mx-auto z-50">
@@ -119,6 +121,46 @@
                 </div>
             </div>
         </div>
+    </section>
+    <section>
+        <div class="container mx-auto custom-text">
+            @php
+                $count = 0;
+            @endphp
+            <h2 class="text-5xl font-bold my-10 text-center">Some of our hotspots!</h2>
+
+            <div class="slider-home-page h-100">
+                @foreach ($hotspots as $hotspot)
+                    <div class="p-4">
+
+                        <div class="relative flex items-end justify-start w-full text-white text-left bg-center bg-cover h-96 bg-gray-500 hover:animate-pulse transition rounded-xl"
+                            style="background-image: url(&quot;https://source.unsplash.com/random/240x320?{{ $count }}&quot;);">
+                            <div
+                                class="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b via-transparent from-gray-900 to-gray-900 rounded-lg shadow">
+                            </div>
+                            <div class="absolute top-0 left-0 right-0 flex items-center justify-between mx-5 mt-3">
+                                <a rel="noopener noreferrer" href=""
+                                    class="px-3 py-2 text-xs font-semibold tracking-wider uppercase dark:text-gray-100 bgundefined">{{ $hotspot->name }}</a>
+                                <div class="flex flex-col justify-start text-center dark:text-gray-100">
+                                    <span class="text-3xl font-semibold leading-none tracking-wide">04</span>
+                                    <span class="leading-none uppercase">Aug</span>
+                                </div>
+                            </div>
+                            <h2 class="z-10 p-5">
+                                <a rel="noopener noreferrer" href="{{ route('hotspot.show', $hotspot->id) }}"
+                                    class="font-medium text-md hover:underline dark:text-gray-100">
+                                    {{ Str::limit($hotspot->description, 50) }}</a>
+                            </h2>
+                        </div>
+                        @php
+                            $count++;
+                        @endphp
+
+                    </div>
+                @endforeach
+            </div>
+            <div class="home-nav-arrows flex justify-center items-center py-5 gap-20"></div>
+
     </section>
 
 

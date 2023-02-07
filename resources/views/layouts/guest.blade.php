@@ -9,7 +9,12 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
+    {{-- <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap"> --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <script src="https://kit.fontawesome.com/c5a3b5b538.js" crossorigin="anonymous"></script>
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -19,8 +24,8 @@
 <body>
     <nav class="relative px-4 py-4 flex justify-between items-center shadow">
         <a class="text-3xl font-bold leading-none" href="{{ url('/') }}">
-            <img src="https://www.coastalstay.co.uk/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcoastal-stay-gray-v2.c90f426a.png&w=384&q=75" height="30px"
-                style="filter: invert(1); height: 50px!important; width: 68px!important;" alt="">
+            <img src="https://www.coastalstay.co.uk/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcoastal-stay-gray-v2.c90f426a.png&w=384&q=75"
+                height="30px" style="filter: invert(1); height: 50px!important; width: 68px!important;" alt="">
         </a>
         <div class="lg:hidden">
             <button class="navbar-burger flex items-center text-blue-600 p-3">
@@ -93,8 +98,9 @@
             class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
             <div class="flex items-center mb-8">
                 <a class="mr-auto text-3xl font-bold leading-none" href="{{ url('/') }}">
-                    <img src="https://www.coastalstay.co.uk/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcoastal-stay-gray-v2.c90f426a.png&w=384&q=75                    " height="30px"
-                        style="filter: invert(1); height: 50px!important; width: 68px!important;" alt="">
+                    <img src="https://www.coastalstay.co.uk/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcoastal-stay-gray-v2.c90f426a.png&w=384&q=75                    "
+                        height="30px" style="filter: invert(1); height: 50px!important; width: 68px!important;"
+                        alt="">
                 </a>
                 <button class="navbar-close">
                     <svg class="h-6 w-6 custom-text cursor-pointer hover:custom-text"
@@ -209,22 +215,26 @@
                     </a>
                 </div>
                 <div class="px-5 py-2">
-                    <a href="{{ route('message.index') }}" class="text-base leading-6 custom-text hover:text-gray-900">
+                    <a href="{{ route('message.index') }}"
+                        class="text-base leading-6 custom-text hover:text-gray-900">
                         Message Board
                     </a>
                 </div>
                 <div class="px-5 py-2">
-                    <a href="{{ route('amenities.index') }}" class="text-base leading-6 custom-text hover:text-gray-900">
+                    <a href="{{ route('amenities.index') }}"
+                        class="text-base leading-6 custom-text hover:text-gray-900">
                         Local Activities / Amenities
                     </a>
                 </div>
                 <div class="px-5 py-2">
-                    <a href="{{ route('hotspot.index') }}" class="text-base leading-6 custom-text hover:text-gray-900">
+                    <a href="{{ route('hotspot.index') }}"
+                        class="text-base leading-6 custom-text hover:text-gray-900">
                         Hotspots
                     </a>
                 </div>
                 <div class="px-5 py-2">
-                    <a href="{{ route('contact.index') }}" class="text-base leading-6 custom-text hover:text-gray-900">
+                    <a href="{{ route('contact.index') }}"
+                        class="text-base leading-6 custom-text hover:text-gray-900">
                         Contact
                     </a>
                 </div>
@@ -273,6 +283,95 @@
             </p>
         </div>
     </section>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.slider-wrap').slick({
+                infinite: true,
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                speed: 300,
+                dots: false,
+                arrows: true,
+                appendArrows: $('.single-nav-arrows'),
+                nextArrow: '<button><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></button>',
+                prevArrow: '<button><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></button>',
+                responsive: [{
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
+                            infinite: true,
+                            dots: true
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                    // You can unslick at a given breakpoint now by adding:
+                    // settings: "unslick"
+                    // instead of a settings object
+                ]
+            });
+        });
+
+        $(document).ready(function() {
+            $('.slider-home-page').slick({
+                infinite: true,
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                speed: 300,
+                dots: false,
+                arrows: true,
+                appendArrows: $('.home-nav-arrows'),
+                nextArrow: '<button><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></button>',
+                prevArrow: '<button><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></button>',
+                responsive: [{
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 1,
+                            infinite: true,
+                            dots: true
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                    // You can unslick at a given breakpoint now by adding:
+                    // settings: "unslick"
+                    // instead of a settings object
+                ]
+            });
+        });
+    </script>
 </body>
 
 </html>

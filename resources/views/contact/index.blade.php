@@ -15,20 +15,20 @@
                 class="space-y-6 ng-untouched ng-pristine ng-valid custom-text">
                 @csrf
                 <div>
-                    <label for="name" class="text-sm">Full name</label>
+                    <label for="name" class="text-lg font-bold">Full name</label>
                     <input id="name" type="text" name="name" value="{{ old('name') }}" placeholder=""
                         class="w-full p-3 rounded bg-white border-none">
                     <span class="text-red-400" id="nameErrorMsg"></span>
                 </div>
                 <div>
-                    <label for="email" class="text-sm">Email</label>
+                    <label for="email" class="text-lg font-bold">Email</label>
                     <input id="email" type="email" name="email" value="{{ old('email') }}"
                         class="w-full p-3 rounded bg-white border-none">
                     <span class="text-red-400" id="emailErrorMsg"></span>
 
                 </div>
                 <div>
-                    <label for="message" class="text-sm">Message</label>
+                    <label for="message" class="text-lg font-bold">Message</label>
                     <textarea id="message" rows="3" class="w-full p-3 rounded bg-white border-none" name="message">{{ old('message') }}</textarea>
                     <span class="text-red-400" id="messageErrorMsg"></span>
 

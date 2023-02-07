@@ -29,8 +29,8 @@ class HomeController extends Controller
             'https://lh3.googleusercontent.com/p/AF1QipPPzw6s15kzdvySegZjo8yyH5m2V9f3rcpWnyZK=s1360-w1360-h1020'
         ];
 
-
-        return view('welcome', compact('weather_data', 'temp', 'home_gallery'));
+        $hotspots = HotSpot::all();
+        return view('welcome', compact('weather_data', 'temp', 'home_gallery', 'hotspots'));
     }
 
     public function dashboard()

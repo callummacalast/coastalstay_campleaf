@@ -1,17 +1,17 @@
-on: push
-name: 🚀 Deploy website on push
-jobs:
-  web-deploy:
-    name: 🎉 Deploy
-    runs-on: ubuntu-latest
-    steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v2.3.2
+# on: push
+# name: 🚀 Deploy website on push
+# jobs:
+#   web-deploy:
+#     name: 🎉 Deploy
+#     runs-on: ubuntu-latest
+#     steps:
+#     - name: 🚚 Get latest code
+#       uses: actions/checkout@v2.3.2
     
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.0.0
-      with:
-        server: ftp.gb.stackcp.com
-        username: callum@jrdev.co.uk
-        password: Lp/pCpa)hv%(
-        server-dir: coastal_stay_app/
+#     - name: 📂 Sync files
+#       uses: SamKirkland/FTP-Deploy-Action@4.0.0
+#       with:
+#         server: ftp.gb.stackcp.com
+#         username: callum@jrdev.co.uk
+#         password: Lp/pCpa)hv%(
+#         server-dir: coastal_stay_app/

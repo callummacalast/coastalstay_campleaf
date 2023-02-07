@@ -1,10 +1,10 @@
 <x-guest-layout>
-    <div class="container mx-auto m-5">
+    <div class="container mx-auto m-5 custom-text">
         <div class="list-views mx-5 flex lg:flex-row md:flex-row flex-col items-center gap-5 justify-between">
 
-            <div>
-                <h3 class="font-bold text-3xl">Our Hotspots</h3>
-                <span class="text-sm">Use the filter button to toggle view from list to map view!</span>
+            <div class="flex flex-col gap-5">
+                <h3 class="font-bold text-5xl">Our Hotspots</h3>
+                <span class="text-lg">Use the filter button to toggle view from list to map view!</span>
                 <div class="leave-message my-4">
                     <a href="{{ route('hotspot.create') }}"
                         class="bg-blue-400 p-3 text-white rounded shadow custom-orange transition">Add Hotspot</a>
