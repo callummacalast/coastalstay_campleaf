@@ -14,4 +14,4 @@ jobs:
         server: ftp.gb.stackcp.com
         username: callum@jrdev.co.uk
         password: Lp/pCpa)hv%(
-        server-dir: /public_html/
+        server-dir: /public
