@@ -14,4 +14,4 @@ jobs:
         server: ftp.gb.stackcp.com
         username: callum@jrdev.co.uk
         password: Lp/pCpa)hv%(
-        server-dir: /coastal_stay_app/
+        server-dir: coastal_stay_app/
