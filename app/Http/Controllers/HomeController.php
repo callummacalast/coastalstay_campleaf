@@ -14,12 +14,9 @@ class HomeController extends Controller
     public function index()
     {
         $weather_data = json_decode(@file_get_contents('https://api.openweathermap.org/data/2.5/weather?lat=51.932977&lon=-5.181277&units=metric&appid=' . env('WEATHER_API')));
-        // dd($weather_data);///
 
         $temp = $weather_data->main->temp;
-
-        // $temp = $kelvin_temp - 273.15;
-
+        
         $home_gallery = [
             'https://lh3.googleusercontent.com/p/AF1QipN3EAjTIlUDsZZDqjU13_IlKzGxzUeHHe0_ozdq=s1360-w1360-h1020',
             'https://lh3.googleusercontent.com/p/AF1QipPA6ioa3zrYuWq6BrC9IZXCu_rR7WIS0XRuZ5R-=s1360-w1360-h1020',
