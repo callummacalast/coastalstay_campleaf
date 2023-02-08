@@ -1,16 +1,15 @@
 <x-guest-layout>
-    <div class="container p-8 my-5">
-       
+    <div class="container mx-auto p-8 my-5">
         <h2 class="my-5 text-5xl custom-text font-bold ">Message Board</h3>
             <div class="leave-message my-5">
-                <p class="my-5">Welcome to the message board, please feel free to express yourself, perhaps about your stay or anything else. Take a look at other campers messages for inspiration.</p>
+                <p class="my-10">Welcome to the message board, please feel free to express yourself, perhaps about your
+                    stay or anything else. Take a look at other campers messages for inspiration.</p>
                 <a href="{{ route('message.create') }}"
-                    class="bg-orange-400 my-5 p-3 text-white rounded shadow hover:bg-orange-300 transition">Leave a message</a>
+                    class="bg-orange-400 mt-10 p-3 text-white rounded shadow hover:bg-orange-300 transition  xl:w-auto md:w-auto lg:w-auto w-full">Leave a
+                    message</a>
             </div>
-           
     </div>
-    <div
-        class="p-8  flex items-center justify-center  grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
+    <div class="p-8  flex items-center justify-center  grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
         @php
             $count = 0;
         @endphp

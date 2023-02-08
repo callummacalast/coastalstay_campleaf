@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <div class="container mx-auto m-5 custom-text">
+    <div class="container mx-auto mt-32 custom-text">
         <div class="list-views mx-5 flex lg:flex-row md:flex-row flex-col items-center gap-5 justify-between">
 
             <div class="flex flex-col gap-5">
@@ -78,7 +78,7 @@
             </div>
         </div>
     </div>
-    <div id="hotspot-map" class="hidden container  m-3 w-full">
+    <div id="hotspot-map" class="hidden container mx-auto p-3  m-3 w-full">
         <div class="container mt-5 h-full">
             <div id="map" style="height: 600px; width: 100%;" class="shadow rounded"></div>
         </div>

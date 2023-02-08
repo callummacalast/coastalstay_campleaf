@@ -1,7 +1,7 @@
 <x-guest-layout>
 
     <div class="container mx-auto">
-        <div class="title my-3 p-4">
+        <div class="title mt-32 p-4">
             <h2 class="text-4xl font-bold">Create Message!</h2>
             <p class="my-3">Leave a message for other campers, leave an experience from your time here or write a poem. It's up to you!</p>
         </div>

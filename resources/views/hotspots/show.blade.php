@@ -89,7 +89,7 @@
 
                 @endforeach
             </div>
-            <div class="single-nav-arrows"></div>
+            <div class="single-nav-arrows flex justify-center gap-10 my-5"></div>
 
 
             <script type="text/javascript">

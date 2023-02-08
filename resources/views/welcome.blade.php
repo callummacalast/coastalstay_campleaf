@@ -33,8 +33,8 @@
         </div>
         <div class="container px-6 py-10 mx-auto z-50">
             <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3">
-                <div class="p-8 space-y-3 border-2 border-orange-400 shadow border-blue-300 rounded-xl bg-white">
-                    <span class="inline-block text-orange-500 text-blue-400">
+                <div class="p-8 space-y-3  border-orange-400 shadow  rounded-xl bg-white">
+                    <span class="inline-block text-blue-400">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -63,8 +63,8 @@
                     </a>
                 </div>
 
-                <div class="p-8 space-y-3 border-2 border-orange-400 bg-white shadow border-blue-300 rounded-xl ">
-                    <span class="inline-block text-orange-500 text-orange-400">
+                <div class="p-8 space-y-3   bg-white shadow  rounded-xl ">
+                    <span class="inline-block text-blue-400">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -90,7 +90,7 @@
                     </a>
                 </div>
                 <div
-                    class="p-8 space-y-3 rounded-xl border-orange-400 bg-white shadow border-blue-300 border-2 text-gray-100 hover:animate-pulse">
+                    class="p-8 space-y-3 rounded-xl border-orange-400 bg-white shadow   text-gray-100 hover:animate-pulse">
                     <div class="text-center custom-text">
                         <h2 class="text-xl font-semibold">{{ $weather_data->name }}</h2>
                         <p class="text-sm">{{ \Carbon\Carbon::now()->format('d M') }}</p>

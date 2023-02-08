@@ -50,9 +50,9 @@
             </thead>
             <tbody>
                 @foreach ($messageBoardItem as $message)
-                    <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                    <tr class="bg-white border-b  ">
                         <th scope="row"
-                            class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            class="py-4 px-6 font-medium  whitespace-nowrap ">
                             {{ $message->id }}
                         </th>
                         <td class="py-4 px-6">
@@ -64,7 +64,7 @@
 
                         <td class="py-4 px-6">
                             <a href="{{ route('admin.messages.edit', $message->id) }}"
-                                class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                class="font-medium text-blue-600  hover:underline">Edit</a>
                             <a href="{{ route('admin.messages.delete', $message->id) }}" class="font-medium text-red-600 dark:text-blue-500 hover:underline"
                                 onclick="return confirm('Are you sure?')">
                                 Delete
