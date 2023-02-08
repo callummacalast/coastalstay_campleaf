@@ -310,7 +310,7 @@
             <div class="container mx-auto p-4 my-6 space-y-2 text-center">
                 <h2 class="text-5xl font-bold">Buses.</h2>
                 <h2 class="text-3xl font-bold">T11 Fishguard to Haverfordwest</h2>
-                <p class="text-lg w-1/2 mx-auto"><span class="underline font-bold">T11</span> Fishguard to
+                <p class="text-lg md:w-1/2 lg:w-1/2 xl:w-1/2 w-full mx-auto"><span class="underline font-bold">T11</span> Fishguard to
                     Haverfordwest &amp; Haverfordwest to Fishguard via St Davids.
                     Bus stop is a 10 min walk away, down to <span class="underline font-bold">Llanrhian</span>
                     Crossroads &amp; take a right, you’ll see the
@@ -327,7 +327,7 @@
             <div class="container mx-auto p-4 my-6 space-y-2 text-center">
                 <h2 class="text-3xl font-bold">404 Strumble Shuttle - St Davids to Fishguard</h2>
 
-                <p class="text-lg mx-auto w-1/2"><span class="underline font-bold">404 Strumble Shuttle – St
+                <p class="text-lg mx-auto md:w-1/2 lg:w-1/2 xl:w-1/2 w-full"><span class="underline font-bold">404 Strumble Shuttle – St
                         Davids to Fishguard</span> &amp; Fishguard to St Davids via Mathry.
                     <span class="text-red-600 font-bold italic">THURSDAYS ONLY.</span>
                     You can catch it from outside of the house, just poke your arm out!

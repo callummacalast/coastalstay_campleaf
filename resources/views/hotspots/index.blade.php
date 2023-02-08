@@ -29,7 +29,7 @@
                 </button>
             </div>
         </div>
-     
+
         <div class="" id="hotspot-list">
             <div class="max-w-screen-xl p-5 mx-auto ">
                 <div class="grid grid-cols-1 gap-5 lg:grid-cols-4 sm:grid-cols-2">
@@ -113,12 +113,7 @@
                     });
                     google.maps.event.addListener(marker, 'click', (function(marker, i) {
                         return function() {
-                            @if (App::environment('production'))
-
-                                let url = 'https://jrdev.co.uk/hotspot';
-                            @else
-                                let url = 'http://campsite-info-board.test/hotspot';
-                            @endif
+                            let url = "{{ url('/hotspot') }}";
                             infowindow.setContent('<a href="' + url + "/" + locations[i][3] +
                                 '" class="p-3 underline hover:text-blue-300 font-bold text-1xl">' +
                                 locations[i][2] + '</a>');
@@ -129,6 +124,7 @@
             }
             window.initMap = initMap;
         </script>
+
 
         <script type="text/javascript"
             src="https://maps.google.com/maps/api/js?key={{ env('GOOGLE_MAP_KEY') }}&callback=initMap"></script>
