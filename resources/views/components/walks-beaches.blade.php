@@ -207,7 +207,7 @@
         </div>
         <div class="mt-10 lg:mt-0 lg:col-start-1 lg:row-start-1">
             <img src="https://www.coastalstay.co.uk/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FCoastalstay_View.34e535cd.jpeg&w=3840&q=75"
-                alt="" class="mx-auto rounded-lg shadow-lg dark:bg-gray-500">
+                alt="" class="mx-auto rounded-lg shadow-lg">
         </div>
     </div>
 </div>
