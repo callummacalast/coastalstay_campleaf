@@ -7,8 +7,9 @@ body{
     background: #f2ebd9;
     
 }
-* {
+html, body, h1, h2, h3, p, a    {
     font-family: 'Kanit', sans-serif!important;
+
 
 }
 

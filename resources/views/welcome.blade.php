@@ -12,18 +12,18 @@
                     style="background-color: rgba(0, 0, 0, 0.75)">
                     <div class="flex justify-center items-center h-full">
                         <div class="text-center text-white px-6 md:px-12">
-                            <h1 class="text-5xl font-bold leading-none sm:text-5xl">Welcome to
+                            <h1 class="xl:text-5xl lg:text-5xl text-xl font-bold leading-none sm:text-2xl">Welcome to
                                 <span class="dark:text-sky-400">Coastal Stay</span> Campsite
                             </h1>
-                            <p class="px-8 mt-8 mb-12 w-3/4 mx-auto text-xl">We are thrilled to have you here, lets get straight to
+                            <p class="px-8 mt-8 mb-12 lg:w-3/4 mx-auto text-xl">We are thrilled to have you here, lets get straight to
                                 the good stuff!
                                 Hit the welcome pack button and find all your essentials!</p>
                             <div class="flex flex-wrap justify-center">
                                 <a href="{{ route('welcome.camping') }}"
-                                    class="px-8 py-3 m-2 text-lg font-semibold rounded hover:bg-white custom-text"
+                                    class="w-full lg:w-auto sm:w-auto px-8 py-3 m-2 text-lg font-semibold rounded hover:bg-white custom-text"
                                     style="background: #edab28;">I am camping!</a>
                                 <a href="{{ route('welcome.bb') }}"
-                                    class="px-8 py-3 m-2 text-lg font-semibold rounded hover:bg-white custom-text"
+                                    class="w-full lg:w-auto sm:w-auto px-8 py-3 m-2 text-lg font-semibold rounded hover:bg-white custom-text"
                                     style="background: #edab28;">I am B&B!</a>
                             </div>
                         </div>
@@ -44,7 +44,7 @@
                         </svg>
                     </span>
 
-                    <h1 class="text-2xl font-semibold  capitalize">Hotspots</h1>
+                    <h1 class="text-2xl font-semibold custom-text capitalize">Hotspots</h1>
 
                     <p class="custom-text">
                         When you're out and about on your travels around our surrounding area, why not add something to
@@ -113,7 +113,7 @@
                         <rect width="45.255" height="32.001" x="393.373" y="80"
                             transform="rotate(-45 416 96)"></rect>
                     </svg>
-                    <div class="mb-2 text-3xl font-semibold text-center">
+                    <div class="mb-2 text-3xl font-semibold text-center custom-text">
                         {{ round($temp) }}°
                     </div>
 

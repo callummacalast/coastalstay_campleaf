@@ -168,10 +168,7 @@
         </div>
     </nav>
     <div class="">
-        <div class="mt-32">
-            @include('flash')
-
-        </div>
+        @include('flash')
         {{ $slot }}
     </div>
     <script>

@@ -9,7 +9,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
-    {{-- <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap"> --}}
+    <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -22,7 +22,7 @@
 </head>
 
 <body>
-    <nav class="relative px-4 py-4 flex justify-between items-center shadow">
+    <nav class="fixed w-full off-white-bg z-50 px-4 py-4 flex justify-between items-center shadow mb-16 top-0">
         <a class="text-3xl font-bold leading-none" href="{{ url('/') }}">
             <img src="https://www.coastalstay.co.uk/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcoastal-stay-gray-v2.c90f426a.png&w=384&q=75"
                 height="30px" style="filter: invert(1); height: 50px!important; width: 68px!important;" alt="">
@@ -67,7 +67,7 @@
                 </svg>
             </li>
             <li><a class=" {{ request()->is('local-amenities') ? 'text-blue-600 font-bold' : '' }} text-sm custom-text hover:underline "
-                    href="{{ route('amenities.index') }}">Local Activities / Amenities</a></li>
+                    href="{{ route('rules.index') }}">Rules</a></li>
             <li class="text-gray-300">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
                     class="w-4 h-4 current-fill" viewBox="0 0 24 24">
@@ -127,7 +127,7 @@
                     </li>
                     <li class="mb-1">
                         <a class="block p-4 text-sm font-semibold custom-text hover:bg-blue-50 hover:text-blue-600 rounded"
-                            href="{{ route('amenities.index') }}">Local Activities / Amenities</a>
+                            href="{{ route('rules.index') }}">Rules</a>
                     </li>
                     <li class="mb-1">
                         <a class="block p-4 text-sm font-semibold custom-text hover:bg-blue-50 hover:text-blue-600 rounded"
@@ -200,7 +200,7 @@
         });
     </script>
     @include('flash')
-    <div class="font-sans text-gray-900 antialiased">
+    <div class="font-sans text-gray-900 antialiased mt-16">
         {{ $slot }}
     </div>
 
