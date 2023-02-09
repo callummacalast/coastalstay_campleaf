@@ -1,7 +1,7 @@
 <x-guest-layout>
 
     <div class="container mx-auto">
-        <div class="title mt-32 p-4">
+        <div class="title mt-32 p-4 custom-text">
             <h2 class="text-4xl font-bold">Create Message!</h2>
             <p class="my-3">Leave a message for other campers, leave an experience from your time here or write a poem. It's up to you!</p>
         </div>
@@ -16,7 +16,7 @@
                 <label for="title" class="font-bold">Message</label>
                 <textarea rows="5" name="message" id="title" class="rounded border-none bg-gray-100 shadow"></textarea>
             </div>
-            <button type="submit" class="bg-orange-400 rounded shadow p-2 text-white my-3">Create Message!</button>
+            <button type="submit" class="bg-orange-400 w-full lg:w-auto xl:w-auto md:w-auto rounded shadow p-2 text-white my-3">Create Message!</button>
         </form>
     </div>
 

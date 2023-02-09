@@ -1,10 +1,10 @@
 <x-guest-layout>
-    <div class="container mx-auto m-5">
-        <div class="back">
-            <a href="{{ route('message.index') }}" class="rounded shadow bg-blue-300 text-white p-3 my-5">Back To
+    <div class="container mx-auto mt-32 m-5 p-5">
+        <div class="back my-5">
+            <a href="{{ route('message.index') }}" class="rounded shadow custom-orange text-white p-3 my-5">Back To
                 Messages</a>
         </div>
-        <div class="px-5 py-4 bg-white  shadow rounded-lg my-5">
+        <div class="px-5 py-4 bg-white mt-16 shadow rounded-lg my-5">
             <div class="flex mb-4">
                 <img class="w-12 h-12 rounded-full"
                     src="https://source.unsplash.com/random/?0&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80">

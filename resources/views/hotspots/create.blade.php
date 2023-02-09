@@ -6,7 +6,7 @@
         <form action="{{ route('hotspot.store') }}" method="post" class="m-3" enctype="multipart/form-data">
             @csrf
             <div class="container my-5 location">
-                <p>*Click a place on the map to add your hotspot</p>
+                <p class="my-5"><span class="text-red-500">*</span>To get started, find your location on the map. Using 2 fingers to navigate the map, and double tapping to zoom further in. You can then tap once to set your marker. Once you have done this go to the form below to finish up.</p>
                 <div id="map" style="height: 400px;"></div>
             </div>
             <div class="flex xl:flex-row lg:flex-row flex-col lg:gap-5 xl:gap-5 text-lg ">
@@ -32,6 +32,7 @@
             </div>
             <div class="status flex flex-col text-lg">
                 <label for="status">Status</label>
+                <span class="text-sm my-3"><span class="text-red-500">*</span>The status will be set to pending until an admin reviews your hotspot. Keep an eye out on the site!</span>
                 <select name="status" id="status" class="border-none rounded shadow bg-gray-100 mb-2 xl:w-1/4 lg:w-1/4 md:w-1/2 w-full">
                     @role('admin')
                         <option value="live">Live</option>

@@ -1,6 +1,6 @@
 <x-guest-layout>
     <!-- This is an example component -->
-    <div class="container mx-auto mt-16">
+    <div class="container mx-auto mt-32">
         <!-- Snippet -->
         <section class="flex flex-col justify-center antialiased bg-gray-900 text-gray-200 min-h-screen">
             <div class="max-w-6xl mx-auto p-4 sm:px-6 h-full">
@@ -51,7 +51,7 @@
                 </div>
             </div>
         </section>
-        <div class="max-w-screen-xl p-5 mx-auto dark:bg-gray-800 dark:text-gray-100">
+        <div class="max-w-screen-xl p-5 mx-auto  ">
             <h3 class="text-3xl font-bold my-3">See more hotspots!</h3>
             <div class="">
                 @php
@@ -62,22 +62,22 @@
                 @foreach ($hotspots as $hotspot)
                 <div class="p-4">
 
-                    <div class="relative flex items-end justify-start w-full text-white text-left bg-center bg-cover h-96 bg-gray-500 hover:animate-pulse transition rounded-xl"
+                    <div class="relative flex items-end justify-start w-full text-white text-left bg-center bg-cover h-96  hover:animate-pulse transition rounded-xl"
                         style="background-image: url(&quot;https://source.unsplash.com/random/240x320?{{ $count }}&quot;);">
                         <div
                             class="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b via-transparent from-gray-900 to-gray-900 rounded-lg shadow">
                         </div>
                         <div class="absolute top-0 left-0 right-0 flex items-center justify-between mx-5 mt-3">
                             <a rel="noopener noreferrer" href=""
-                                class="px-3 py-2 text-xs font-semibold tracking-wider uppercase dark:text-gray-100 bgundefined">{{ $hotspot->name }}</a>
-                            <div class="flex flex-col justify-start text-center dark:text-gray-100">
+                                class="px-3 py-2 text-xs font-semibold tracking-wider uppercase  bgundefined">{{ $hotspot->name }}</a>
+                            <div class="flex flex-col justify-start text-center ">
                                 <span class="text-3xl font-semibold leading-none tracking-wide">04</span>
                                 <span class="leading-none uppercase">Aug</span>
                             </div>
                         </div>
                         <h2 class="z-10 p-5">
                             <a rel="noopener noreferrer" href="{{ route('hotspot.show', $hotspot->id) }}"
-                                class="font-medium text-md hover:underline dark:text-gray-100">
+                                class="font-medium text-md hover:underline ">
                                 {{ Str::limit($hotspot->description, 50) }}</a>
                         </h2>
                     </div>
