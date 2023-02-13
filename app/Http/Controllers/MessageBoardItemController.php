@@ -42,7 +42,8 @@ class MessageBoardItemController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required',
-            'message' => 'required'
+            'message' => 'required',
+            'status' => 'required'
         ]);
 
         $message = new MessageBoardItem;
@@ -100,13 +101,12 @@ class MessageBoardItemController extends Controller
      * @param  \App\Models\MessageBoardItem  $messageBoardItem
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $message)
+    public function update(Request $request, MessageBoardItem $message)
     {
         $validated = $request->validate([
             'title' => 'required',
             'message' => 'required',
         ]);
-        $message = MessageBoardItem::findOrFail($message);
 
         $message->fill($validated);
 
