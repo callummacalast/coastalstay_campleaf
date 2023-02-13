@@ -150,15 +150,15 @@
                     <li class="mb-1">
                         <a class="block p-4 text-sm font-semibold custom-text hover:bg-blue-50 hover:text-blue-600 rounded"
                             href="#!" id="info-btn-m">Info ↓</a>
-                            <div class=" hidden bg-white p-3 right-0 left-0 w-32  flex-col rounded" id="info-dropdown-m">
-                                <div class="flex flex-col gap-5">
-                                    <a href="{{ route('welcome.camping') }}"
-                                        class="font-semibold hover:bg-orange-400 hover:text-white transition text-sm custom-text hover:underline rounded  p-1">Campers</a>
-                                    <a href="{{ route('welcome.bb') }}"
-                                        class="font-semibold hover:bg-orange-400 hover:text-white transition text-sm custom-text hover:underline rounded p-1">B
-                                        and B</a>
-                                </div>
+                        <div class=" hidden bg-white p-3 right-0 left-0 w-32  flex-col rounded" id="info-dropdown-m">
+                            <div class="flex flex-col gap-5">
+                                <a href="{{ route('welcome.camping') }}"
+                                    class="font-semibold hover:bg-orange-400 hover:text-white transition text-sm custom-text hover:underline rounded  p-1">Campers</a>
+                                <a href="{{ route('welcome.bb') }}"
+                                    class="font-semibold hover:bg-orange-400 hover:text-white transition text-sm custom-text hover:underline rounded p-1">B
+                                    and B</a>
                             </div>
+                        </div>
                     </li>
                 </ul>
             </div>
