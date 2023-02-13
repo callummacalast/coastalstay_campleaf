@@ -53,7 +53,6 @@
             </div>
 
             @include('components.walks-beaches')
-
         </div>
         {{-- <div class="p-6 py-12 bg-orange-200">
             <div class="container mx-auto">
