@@ -18,7 +18,7 @@ class HotSpotController extends Controller
     {
 
         $hotspots = HotSpot::where('status', 'live')
-            ->paginate(10);
+            ->paginate(8);
 
         $locations = $hotspots->pluck('lng', 'lat', 'name');
 
