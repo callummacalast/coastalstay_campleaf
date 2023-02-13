@@ -73,7 +73,7 @@
                 @endforeach
 
             </div>
-            <div class="pagination w-full">
+            <div class="pagination w-full mt-16">
                 {{ $hotspots->links() }}
             </div>
         </div>

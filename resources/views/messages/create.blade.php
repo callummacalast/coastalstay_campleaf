@@ -12,9 +12,11 @@
                 <input type="text" name="title" id="title" class="rounded border-none bg-gray-100 shadow">
             </div>
             <div class="flex flex-col my-3">
-
                 <label for="title" class="font-bold">Message</label>
                 <textarea rows="5" name="message" id="title" class="rounded border-none bg-gray-100 shadow"></textarea>
+            </div>
+            <div>
+                <input type="hidden" name="status" value="live">
             </div>
             <button type="submit" class="bg-orange-400 w-full lg:w-auto xl:w-auto md:w-auto rounded shadow p-2 text-white my-3">Create Message!</button>
         </form>
