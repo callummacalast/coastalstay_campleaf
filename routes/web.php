@@ -84,8 +84,8 @@ Route::controller(MessageBoardItemController::class)->group(function () {
 Route::get('/rules', [RuleController::class, 'index'])->name('rules.index');
 
 
-Route::get('/contact', [ContactMessageController::class, 'index'])->name('contact.index');
-Route::post('/contact/send', [ContactMessageController::class, 'store'])->name('contact.store');
+// Route::get('/contact', [ContactMessageController::class, 'index'])->name('contact.index');
+// Route::post('/contact/send', [ContactMessageController::class, 'store'])->name('contact.store');
 
 
 require __DIR__ . '/auth.php';

@@ -7,7 +7,7 @@
                     Noddfa Guesthouse</h2>
             </div>
             <div class="container mx-auto grid justify-center gap-4 sm:grid-cols-2 lg:grid-cols-3 custom-text">
-                <div class="flex flex-col items-center p-4">
+                {{-- <div class="flex flex-col items-center p-4">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                         class="w-8 h-8 custom-orange rounded-full text-white p-1">
                         <path fill-rule="evenodd"
@@ -20,7 +20,7 @@
                         <p><a href="tel:01348831822" class="underline custom-orange">01348837822</a></p>
                         <p><a href="{{ route('contact.index') }}" class="underline custom-orange">Contact Page</a></p>
                     </div>
-                </div>
+                </div> --}}
                 <div class="flex flex-col items-center p-4">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                         class="w-8 h-8 custom-orange rounded-full text-white p-1">
@@ -55,7 +55,7 @@
             @include('components.walks-beaches')
 
         </div>
-        <div class="p-6 py-12 bg-orange-200">
+        {{-- <div class="p-6 py-12 bg-orange-200">
             <div class="container mx-auto">
                 <div class="flex flex-col lg:flex-row items-center justify-between">
                     <h2 class="text-center text-6xl tracking-tighter font-bold custom-text">Local Activities / Amenities
@@ -66,7 +66,8 @@
                         Go!</a>
                 </div>
             </div>
-        </div>
+        </div> --}}
+        @include('components.amenities')
     </section>
 
 </x-guest-layout>
