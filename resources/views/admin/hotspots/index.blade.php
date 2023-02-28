@@ -1,6 +1,6 @@
 <x-app-layout>
 
-    <div class="container mx-auto mt-32">
+    <div class="container mx-auto mt-10">
 
         <h3 class="m-5 text-3xl font-bold ">Hotspots</h3>
         <div class="pagination w-full py-5">

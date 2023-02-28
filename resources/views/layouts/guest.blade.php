@@ -234,7 +234,7 @@
             }
         });
     </script>
-    @include('flash')
+    {{-- @include('flash') --}}
     <div class="font-sans text-gray-900 antialiased mt-16">
         {{ $slot }}
     </div>

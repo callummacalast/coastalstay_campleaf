@@ -25,7 +25,7 @@
 
 <body class="bg-gray-100 font-sans leading-normal tracking-normal">
 
-    <nav id="header" class="bg-white fixed w-full z-10 top-0 shadow">
+    <nav id="header" class="bg-white w-full z-10 shadow">
 
 
         <div class="w-full container mx-auto flex flex-wrap items-center mt-0 pt-3 pb-3 md:pb-0">
@@ -168,7 +168,7 @@
         </div>
     </nav>
     <div class="">
-        @include('flash')
+        {{-- @include('flash') --}}
         {{ $slot }}
     </div>
     <script>

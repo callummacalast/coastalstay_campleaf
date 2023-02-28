@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="container mx-auto mt-32">
+    <div class="container mx-auto mt-10">
         {{ $contact_messages->links() }}
     </div>
     <div class="overflow-x-auto relative shadow-md sm:rounded-lg container mx-auto mt-10">

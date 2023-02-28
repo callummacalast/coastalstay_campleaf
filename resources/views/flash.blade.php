@@ -1,4 +1,5 @@
-<div class="container mx-auto fixed xl:w-1/2 lg:w-1/2 w-full bottom-5 right-0 left-0 z-50">
+<div
+    class="mx-auto fixed xl:w-1/2 lg:w-1/2 w-full bottom-0 top-32 right-0 left-0 z-50 ">
 
     @if ($message = Session::get('success'))
         <div class="container bg-blue-500 flex items-center text-white text-sm font-bold px-4 py-3 relative"

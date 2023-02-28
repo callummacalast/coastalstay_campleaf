@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="overflow-x-auto relative shadow-md sm:rounded-lg container mx-auto mt-32">
+    <div class="overflow-x-auto relative shadow-md sm:rounded-lg container mx-auto mt-10">
         <div class="create-rule my-5">
             <a href="{{ route('admin.rules.create') }}"
                 class="p-3 rounded shadow bg-blue-300 hover:bg-blue-200 transition text-white">Create

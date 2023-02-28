@@ -24,7 +24,7 @@
         </div>
 
     </div> --}}
-    <div class="leave-message  right-5 bottom-5 mt-32 container mx-auto">
+    <div class="leave-message  right-5 bottom-5 mt-10 container mx-auto">
         <a href="{{ route('message.create') }}"
             class="bg-blue-400 p-3 text-white rounded shadow hover:bg-blue-300 transition">Create a new message</a>
     </div>
