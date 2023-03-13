@@ -2,7 +2,6 @@
     /* Style the tab */
     .tab {
         overflow: hidden;
-        border: 1px solid #ccc;
         background-color: #f1f1f1;
     }
 
@@ -31,7 +30,6 @@
     .tabcontent {
         display: none;
         padding: 6px 12px;
-        border: 1px solid #ccc;
         border-top: none;
     }
 </style>
@@ -58,7 +56,7 @@
         evt.currentTarget.className += " active";
     }
 </script>
-<section class="custom-text">
+<section class="custom-text m-5">
     <!-- Tab links -->
     <div class="tab">
         <button class="tablinks active" onclick="openCity(event, 'shops')">Shops And Supermarkets</button>
@@ -139,7 +137,7 @@
                         </svg>
                     </a>
                 </div>
-                <div class="flex flex-col px-8 py-6 lg:border-none xl:border-solid">
+                <div class="flex flex-col px-8 py-6 lg:border-none">
                     <h2 class="mb-2 text-lg font-semibold sm:text-xl title-font ">The Solva Surgery (4 miles away).
                     </h2>
                     <p class="flex-1 mb-4 text-base leading-relaxed dark:text-gray-400">Maes Yr Eglwys,
@@ -183,7 +181,7 @@
                         </svg>
                     </a>
                 </div>
-                <div class="flex flex-col px-8 py-6 lg:border-none xl:border-solid">
+                <div class="flex flex-col px-8 py-6 lg:border-none ">
                     <h2 class="mb-2 text-lg font-semibold sm:text-xl title-font ">Lloyds Pharmacy, Fishguard (11
                         miles away).</h2>
                     <p class="flex-1 mb-4 text-base leading-relaxed dark:text-gray-400">5 Ropewalk, Fishguard SA65
