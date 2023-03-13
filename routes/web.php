@@ -40,7 +40,7 @@ Route::get('/local-amenities', [HomeController::class, 'localAmenities'])->name(
 
 
 Route::group(['middleware' => 'role:admin', 'name' => 'admin', 'prefix' => 'admin'], function () {
-    Route::get('/admin/messages', [AdminMessageBoardItemController::class, 'index'])->name('admin.messages.index');
+    Route::get('/messages', [AdminMessageBoardItemController::class, 'index'])->name('admin.messages.index');
     // Route::get('/admin/messages/{messageBoardItem}', [AdminMessageBoardItemController::class, 'show'])->name('admin.messages.show');
     Route::post('/messages/{messageBoardItem}/update', [AdminMessageBoardItemController::class, 'update'])->name('admin.messages.update');
     Route::get('/messages/{messageBoardItem}/edit', [AdminMessageBoardItemController::class, 'edit'])->name('admin.messages.edit');
@@ -50,6 +50,7 @@ Route::group(['middleware' => 'role:admin', 'name' => 'admin', 'prefix' => 'admi
     Route::get('/hotspots/{id}/edit', [AdminHotSpotController::class, 'show'])->name('admin.hotspots.show');
     Route::post('/hotspots/update/{id}', [AdminHotSpotController::class, 'update'])->name('admin.hotspots.update');
     Route::get('/hotspots/{hotspot}/delete', [AdminHotSpotController::class, 'destroy'])->name('admin.hotspots.destroy');
+    Route::get('/hotspots/{hotspot}/status', [AdminHotSpotController::class, 'status'])->name('admin.hotspots.status');
 
     Route::get('/rules', [AdminRuleController::class, 'index'])->name('admin.rules.index');
     Route::get('/rules/create', [AdminRuleController::class, 'create'])->name('admin.rules.create');

@@ -43,12 +43,22 @@ class AdminHotSpotController extends Controller
         return Redirect::route('admin.hotspots.index')->with('success', 'Hotspot updated');
     }
 
-
     public function destroy(Hotspot $hotspot)
     {
         $hotspot->delete();
 
         return Redirect::route('admin.hotspots.index')->with('error', 'Hotspot Deleted');
+    }
 
+    public function status(HotSpot $hotspot)
+    {
+        if ($hotspot->status == 'live') {
+            $hotspot->status = 'pending';
+        } elseif ($hotspot->status == 'pending') {
+            $hotspot->status = 'live';
+        }
+        
+        $hotspot->save();
+        return back()->with('success', 'Hotspot status updated');
     }
 }
