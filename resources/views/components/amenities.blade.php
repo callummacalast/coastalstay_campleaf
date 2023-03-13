@@ -318,10 +318,10 @@
             </div>
             <div class="container mx-auto grid justify-center gap-4 grid-cols-1">
                 <div class="hwest-fish">
-                    <img src="{{ asset('travel/fish_to_hwest.png') }}" alt="">
+                    <img src="{{ asset('storage/travel/fish_to_hwest.png') }}" alt="">
                 </div>
                 <div class="fish-hwest">
-                    <img src="{{ asset('travel/hwest_to_fish.png') }}" alt="">
+                    <img src="{{ asset('storage/travel/hwest_to_fish.png') }}" alt="">
                 </div>
             </div>
             <div class="container mx-auto p-4 my-6 space-y-2 text-center">
@@ -335,10 +335,10 @@
             </div>
             <div class="container mx-auto grid justify-center gap-4 grid-cols-1">
                 <div class="hwest-fish">
-                    <img src="{{ asset('travel/404-std_fish.png') }}" alt="">
+                    <img src="{{ asset('storage/travel/404-std_fish.png') }}" alt="">
                 </div>
                 <div class="fish-hwest">
-                    <img src="{{ asset('travel/404-fish_std.png') }}" alt="">
+                    <img src="{{ asset('storage/travel/404-fish_std.png') }}" alt="">
                 </div>
             </div>
         </section>
