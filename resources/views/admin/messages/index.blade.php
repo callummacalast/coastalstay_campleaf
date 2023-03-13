@@ -28,8 +28,25 @@
         <a href="{{ route('message.create') }}"
             class="bg-blue-400 p-3 text-white rounded shadow hover:bg-blue-300 transition">Create a new message</a>
     </div>
+ 
     <div class="overflow-x-auto relative shadow-md sm:rounded-lg container mx-auto mt-16">
-
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @else
+        <div class="alert alert-danger my-5">
+            <ul>
+                <li class="text-green-600">
+                    {{ $success = Session::get('success') }}
+                </li>
+            </ul>
+        </div>
+    @endif
         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
@@ -51,8 +68,7 @@
             <tbody>
                 @foreach ($messageBoardItem as $message)
                     <tr class="bg-white border-b  ">
-                        <th scope="row"
-                            class="py-4 px-6 font-medium  whitespace-nowrap ">
+                        <th scope="row" class="py-4 px-6 font-medium  whitespace-nowrap ">
                             {{ $message->id }}
                         </th>
                         <td class="py-4 px-6">
@@ -65,7 +81,8 @@
                         <td class="py-4 px-6">
                             <a href="{{ route('admin.messages.edit', $message->id) }}"
                                 class="font-medium text-blue-600  hover:underline">Edit</a>
-                            <a href="{{ route('admin.messages.delete', $message->id) }}" class="font-medium text-red-600 dark:text-blue-500 hover:underline"
+                            <a href="{{ route('admin.messages.delete', $message->id) }}"
+                                class="font-medium text-red-600 dark:text-blue-500 hover:underline"
                                 onclick="return confirm('Are you sure?')">
                                 Delete
                             </a>
