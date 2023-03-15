@@ -1,27 +1,45 @@
+
+
 name: Deploy
 
-# Trigger the workflow on push and 
-# pull request events on the production branch
 on:
   push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-      
-# Authenticate to the the server via ssh 
-# and run our deployment script 
+    branches: [main]
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Deploy to server
-        uses: appleboy/ssh-action@master
+      - uses: shivammathur/setup-php@v2
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          port: ${{ secrets.PORT }}
-          key: ${{ secrets.SSHKEY }}
-          script: "cd /coastalstay_campleaf && /.scripts/deploy.sh"
+          php-version: '8.1'
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with: 
+          node-version: 16
+      - uses: mirromutth/mysql-action@v1.1
+        with:
+          mysql database: laravel-test-db
+          mysql user: laravel_test_user
+          mysql password: example
+      - name: Copy .env
+        run: cp .env.example .env
+      - name: Install composer Dependencies
+        run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+      - name: Install node dependencies
+        run: npm ci
+      - name: Setup Project
+        run: |
+          php artisan config:clear
+          php artisan cache:clear
+          php artisan key:generate
+          npm run build
+      - name: Directory Permissions
+        run: chmod 755 -R storage bootstrap/cache
+      - name: Deploy to Server
+        uses: SamKirkland/web-deploy@v1
+        with:
+          target-server: ssh.gb.stackcp.com
+          remote-user: jrdev.co.uk
+          private-ssh-key: ${{ secrets.SSHKEY }}
+          destination-path: ~/
+          rsync-options: --human-readable --dry-run
