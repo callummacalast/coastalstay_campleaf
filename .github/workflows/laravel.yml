@@ -35,10 +35,11 @@ jobs:
           npm run build
       - name: Directory Permissions
         run: chmod 755 -R storage bootstrap/cache
-      - name: 📂 Sync files
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - name: Deploy to Server
+        uses: SamKirkland/web-deploy@v1
         with:
-          server: ftp.gb.stackcp.com
-          username: deployments@campleaf.co.uk
-          password: ${{ secrets.FTP_PASSWORD }}
-        
+          target-server: ssh.gb.stackcp.com
+          remote-user: jrdev.co.uk
+          private-ssh-key: ${{ secrets.SSHKEY }}
+          destination-path: ~/coastalstay_campleaf
+          # rsync-options: --human-readable --dry-run
