@@ -41,5 +41,5 @@ jobs:
           target-server: ssh.gb.stackcp.com
           remote-user: jrdev.co.uk
           private-ssh-key: ${{ secrets.SSHKEY }}
-          destination-path: ~/
-          rsync-options: --human-readable --dry-run
+          destination-path: ~/coastalstay_campleaf
+          # rsync-options: --human-readable --dry-run
