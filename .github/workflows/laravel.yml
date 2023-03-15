@@ -38,7 +38,7 @@ jobs:
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ftp.samkirkland.com
+          server: ftp.gb.stackcp.com
           username: deployments@campleaf.co.uk
           password: ${{ secrets.FTP_PASSWORD }}
         
