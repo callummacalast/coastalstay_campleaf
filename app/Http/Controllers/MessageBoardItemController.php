@@ -80,9 +80,11 @@ class MessageBoardItemController extends Controller
         $message->updated_at = now();
         $message->update();
 
-        return Redirect::route('message.index')->with('success', 'Message Liked');
+        return response()->json(['success' => 'Message liked']);
+        // return Redirect::route('message.index')->with('success', 'Message Liked');
     }
 
+ 
     /**
      * Show the form for editing the specified resource.
      *
