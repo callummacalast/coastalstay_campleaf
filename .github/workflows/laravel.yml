@@ -24,4 +24,4 @@ jobs:
           username: ${{ secrets.USERNAME }}
           port: ${{ secrets.PORT }}
           key: ${{ secrets.SSHKEY }}
-          script: "cd /coastalstay_campleaf && ./.scripts/deploy.sh"
+          script: "cd /coastalstay_campleaf && /.scripts/deploy.sh"
