@@ -16,18 +16,18 @@
                 @endphp
                 @foreach ($messages as $message)
                     <div
-                        class="px-5 py-4 bg-white shadow rounded-lg max-w-lg  hover:shadow-xl hover:scale-105 transition cursor-pointer">
-                        <div class="flex mb-4">
-                            <img class="w-12 h-12 rounded-full"
-                                src="https://source.unsplash.com/random/?{{ $count }}&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" />
-                            <div class="ml-2 mt-0.5">
-                                <span
-                                    class="block  text-base leading-snug text-white custom-text font-bold">Camper</span>
-                                <span
-                                    class="block text-sm custom-text font-semibold leading-snug">{{ \Carbon\Carbon::parse($message->created_at)->diffForHumans() }}</span>
-                            </div>
-                        </div>
+                        class="px-5 py-4 bg-white shadow rounded-lg max-w-lg  hover:shadow-xl hover:scale-105 transform hover:rotate-1 transition cursor-pointer">
                         <a href="{{ route('message.show', $message->id) }}">
+                            <div class="flex mb-4">
+                                <img class="w-12 h-12 rounded-full"
+                                    src="https://source.unsplash.com/random/?{{ $count }}&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" />
+                                <div class="ml-2 mt-0.5">
+                                    <span
+                                        class="block  text-base leading-snug text-white custom-text font-bold">Camper</span>
+                                    <span
+                                        class="block text-sm custom-text font-semibold leading-snug">{{ \Carbon\Carbon::parse($message->created_at)->diffForHumans() }}</span>
+                                </div>
+                            </div>
                             <h3 class=" custom-text font-semibold mb-2">{{ $message->title }}</h3>
                             <p class="custom-text leading-snug md:leading-normal">
                                 {{ Str::limit($message->message, 200) }}
@@ -35,6 +35,12 @@
                         </a>
                         <div class="flex justify-between items-center mt-5">
                             <div class="flex ">
+                                <style>
+                                    .shake {
+                                        transform: rotate(360deg);
+                                        transition: 0.5s ease-in-out;
+                                    }
+                                </style>
                                 <button class="btn-submit-{{ $message->id }}">
                                     <svg class="p-0.5 h-6 w-6 rounded-full z-20 bg-white bg-gray-800 "
                                         xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'
@@ -66,44 +72,46 @@
                                         </g>
                                     </svg>
                                 </button>
-                                <span
-                                    class="ml-1 custom-text text-gray-400  font-light" id="like-{{ $message->id }}">{{ $message->likes == 0 ? '0' : $message->likes }}</span>
-                                    <script type="text/javascript">
-                                        $.ajaxSetup({
-                                            headers: {
-                                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                <span class="ml-1 custom-text text-gray-400  font-light"
+                                    id="like-{{ $message->id }}">{{ $message->likes == 0 ? '0' : $message->likes }}</span>
+                                <script type="text/javascript">
+                                    $.ajaxSetup({
+                                        headers: {
+                                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                        }
+                                    });
+                                    $(".btn-submit-{{ $message->id }}").click(function(e) {
+                                        e.preventDefault();
+                                        $.ajax({
+                                            type: 'GET',
+                                            data: {},
+                                            url: "{{ route('message.like', $message) }}",
+                                            success: function(data) {
+                                                if ($.isEmptyObject(data.error)) {
+                                                    var likes = $("#like-{{ $message->id }}");
+                                                    likes.html(parseInt(likes.html()) + 1)
+                                                    $(".btn-submit-{{ $message->id }}").addClass('shake')
+                                                    setTimeout(() => {
+                                                        $(".btn-submit-{{ $message->id }}").removeClass('shake')
+                                                    }, 1000);
+
+                                                } else {
+                                                    console.log(data.error);
+                                                }
                                             }
                                         });
-                                        $(".btn-submit-{{ $message->id }}").click(function(e) {
-                                            e.preventDefault();
-                                            console.log(e);
-                                            $.ajax({
-                                                type: 'GET',
-                                                data:{},
-                                                url: "{{ route('message.like', $message) }}",
-                                                success: function(data) {
-                                                    if ($.isEmptyObject(data.error)) {
-                                                        // alert(data.success);
-                                                        // location.reload();
-                                                        var likes =  $("#like-{{ $message->id }}");
-                                                        likes.html(parseInt(likes.html()) + 1)
-                                                        
-                                                    } else {
-                                                        console.log(data.error);
-                                                    }
-                                                }
-                                            });
-                                
+
+                                    });
+
+
+                                    function printErrorMsg(msg) {
+                                        $(".print-error-msg").find("ul").html('');
+                                        $(".print-error-msg").css('display', 'block');
+                                        $.each(msg, function(key, value) {
+                                            $(".print-error-msg").find("ul").append('<li>' + value + '</li>');
                                         });
-                                
-                                        function printErrorMsg(msg) {
-                                            $(".print-error-msg").find("ul").html('');
-                                            $(".print-error-msg").css('display', 'block');
-                                            $.each(msg, function(key, value) {
-                                                $(".print-error-msg").find("ul").append('<li>' + value + '</li>');
-                                            });
-                                        }
-                                    </script>
+                                    }
+                                </script>
                             </div>
                         </div>
                     </div>
