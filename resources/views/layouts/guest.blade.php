@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Coastal Stay Information Board') }}</title>
+    <title>Coastalstay</title>
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    
+
     <link
         href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
@@ -55,8 +55,13 @@
                         d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
                 </svg>
             </li>
-            <li><a class="{{ request()->is('hotspots') ? 'text-blue-600 font-bold' : '' }} text-sm custom-text hover:underline "
-                    href="{{ route('hotspot.index') }}">Hot Spots</a></li>
+            {{-- 
+            **** Hotspot off for now
+            <li>
+                <a class="{{ request()->is('hotspots') ? 'text-blue-600 font-bold' : '' }} text-sm custom-text hover:underline "
+                    href="{{ route('hotspot.index') }}">Hot Spots</a>
+            </li>    
+        
             <li class="text-gray-300">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
                     class="w-4 h-4 current-fill" viewBox="0 0 24 24">
@@ -64,6 +69,7 @@
                         d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
                 </svg>
             </li>
+            --}}
             <li><a class="text-sm custom-text hover:underline  {{ request()->is('messages') ? 'text-blue-600 font-bold' : '' }}"
                     href="{{ route('message.index') }}">Message
                     Board</a></li>
@@ -140,10 +146,14 @@
                         <a class="block p-4 text-sm font-semibold custom-text hover:bg-blue-50 hover:text-blue-600 rounded"
                             href="/">Home</a>
                     </li>
-                    <li class="mb-1">
+                    {{-- 
+                        *** hotspot off for now
+                         <li class="mb-1">
                         <a class="block p-4 text-sm font-semibold custom-text hover:bg-blue-50 hover:text-blue-600 rounded"
                             href="{{ route('hotspot.index') }}">Hot Spots</a>
                     </li>
+                        --}}
+
                     <li class="mb-1">
                         <a class="block p-4 text-sm font-semibold custom-text hover:bg-blue-50 hover:text-blue-600 rounded"
                             href="{{ route('message.index') }}">Message Board</a>
