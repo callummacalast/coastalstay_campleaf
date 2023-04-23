@@ -41,7 +41,7 @@
                                         transition: 0.5s ease-in-out;
                                     }
                                 </style>
-                                <button class="btn-submit-{{ $message->id }}">
+                                <button class="btn-submit-like" data-postid={{ $message->id }}>
                                     <svg class="p-0.5 h-6 w-6 rounded-full z-20 bg-white bg-gray-800 "
                                         xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'
                                         viewBox='0 0 16 16'>
@@ -74,44 +74,7 @@
                                 </button>
                                 <span class="ml-1 custom-text text-gray-400  font-light"
                                     id="like-{{ $message->id }}">{{ $message->likes == 0 ? '0' : $message->likes }}</span>
-                                <script type="text/javascript">
-                                    $.ajaxSetup({
-                                        headers: {
-                                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                                        }
-                                    });
-                                    $(".btn-submit-{{ $message->id }}").click(function(e) {
-                                        e.preventDefault();
-                                        $.ajax({
-                                            type: 'GET',
-                                            data: {},
-                                            url: "{{ route('message.like', $message) }}",
-                                            success: function(data) {
-                                                if ($.isEmptyObject(data.error)) {
-                                                    var likes = $("#like-{{ $message->id }}");
-                                                    likes.html(parseInt(likes.html()) + 1)
-                                                    $(".btn-submit-{{ $message->id }}").addClass('shake')
-                                                    setTimeout(() => {
-                                                        $(".btn-submit-{{ $message->id }}").removeClass('shake')
-                                                    }, 1000);
 
-                                                } else {
-                                                    console.log(data.error);
-                                                }
-                                            }
-                                        });
-
-                                    });
-
-
-                                    function printErrorMsg(msg) {
-                                        $(".print-error-msg").find("ul").html('');
-                                        $(".print-error-msg").css('display', 'block');
-                                        $.each(msg, function(key, value) {
-                                            $(".print-error-msg").find("ul").append('<li>' + value + '</li>');
-                                        });
-                                    }
-                                </script>
                             </div>
                         </div>
                     </div>
@@ -124,6 +87,48 @@
                 {{ $messages->links() }}
             </div>
     </div>
+
+    <script>
+        $(".btn-submit-like").off('click').on('click', (e) => {
+            const postid = $(e.currentTarget).data('postid');
+            e.preventDefault();
+            if (postid != null) {
+
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+
+                $.ajax({
+                    type: 'GET',
+                    data: {},
+                    url: `http://campsite-info-board.test/messages/${postid}/like`,
+                    success: function(data) {
+                        if ($.isEmptyObject(data.error)) {
+                            var likes = $(`#like-${postid}`);
+                            likes.html(parseInt(likes.html()) + 1);
+                            $(e.currentTarget).addClass('shake')
+                            setTimeout(() => {
+                                $(e.currentTarget).removeClass('shake')
+                            }, 1000);
+
+                        } else {
+                            console.log(data.error);
+                        }
+                    }
+                });
+            }
+        });
+
+        function printErrorMsg(msg) {
+            $(".print-error-msg").find("ul").html('');
+            $(".print-error-msg").css('display', 'block');
+            $.each(msg, function(key, value) {
+                $(".print-error-msg").find("ul").append('<li>' + value + '</li>');
+            });
+        }
+    </script>
 
 
 </x-guest-layout>
