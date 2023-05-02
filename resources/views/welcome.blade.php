@@ -1,5 +1,4 @@
 <x-guest-layout>
-
     <section class="bg-white off-white-bg relative overlay">
         <div class="">
             <div class="relative overflow-hidden bg-no-repeat bg-cover"
@@ -15,7 +14,8 @@
                             <h1 class="xl:text-5xl lg:text-5xl text-xl font-bold leading-none sm:text-2xl">Welcome to
                                 <span class="dark:text-sky-400">Coastal Stay</span> Campsite
                             </h1>
-                            <p class="px-8 mt-8 mb-12 lg:w-3/4 mx-auto text-xl">We are thrilled to have you here, lets get straight to
+                            <p class="px-8 mt-8 mb-12 lg:w-3/4 mx-auto text-xl">We are thrilled to have you here, lets
+                                get straight to
                                 the good stuff!
                                 Hit the welcome pack button and find all your essentials!</p>
                             <div class="flex flex-wrap justify-center">
@@ -32,8 +32,8 @@
             </div>
         </div>
         <div class="container px-6 py-10 mx-auto z-50">
-            <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3">
-                <div class="p-8 space-y-3  border-orange-400 shadow  rounded-xl bg-white">
+            <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-2">
+                {{-- <div class="p-8 space-y-3  border-orange-400 shadow  rounded-xl bg-white">
                     <span class="inline-block text-blue-400">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
@@ -61,7 +61,7 @@
                                 d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                     </a>
-                </div>
+                </div> --}}
 
                 <div class="p-8 space-y-3   bg-white shadow  rounded-xl ">
                     <span class="inline-block text-blue-400">
@@ -122,7 +122,7 @@
             </div>
         </div>
     </section>
-    <section>
+    {{-- <section>
         <div class="container mx-auto custom-text">
             @php
                 $count = 0;
@@ -161,7 +161,7 @@
             </div>
             <div class="home-nav-arrows flex justify-center items-center py-5 gap-20"></div>
 
-    </section>
+    </section> --}}
 
 
     <section class="overflow-hidden text-gray-700 ">
