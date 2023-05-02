@@ -22,12 +22,8 @@
 </head>
 
 <body class="bg-gray-100 font-sans leading-normal tracking-normal">
-
     <nav id="header" class="bg-white w-full z-10 shadow">
-
-
         <div class="w-full container mx-auto flex flex-wrap items-center mt-0 pt-3 pb-3 md:pb-0">
-
             <div class="w-1/2 pl-2 md:pl-0">
                 <a class="text-gray-900 text-base xl:text-xl no-underline hover:no-underline font-bold" href="#">
                     <i class="fas fa-sun text-pink-600 pr-3"></i> COASTAL STAY
@@ -68,16 +64,11 @@
                                             onclick="event.preventDefault();
                                         this.closest('form').submit();"
                                             class="px-4 py-2 block text-gray-900 hover:bg-gray-400 no-underline hover:no-underline">Logout</a>
-
-
-
                                     </form>
                                 </li>
                             </ul>
                         </div>
                     </div>
-
-
                     <div class="block lg:hidden pr-4">
                         <button id="nav-toggle"
                             class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-teal-500 appearance-none focus:outline-none">
@@ -88,10 +79,7 @@
                         </button>
                     </div>
                 </div>
-
             </div>
-
-
             <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-white z-20"
                 id="nav-content">
                 <ul class="list-reset lg:flex flex-1 items-center px-4 md:px-0">

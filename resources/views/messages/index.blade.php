@@ -103,7 +103,7 @@
                 $.ajax({
                     type: 'GET',
                     data: {},
-                    url: `http://campsite-info-board.test/messages/${postid}/like`,
+                    url: '{{ url('/') }}' + `/messages/${postid}/like`,
                     success: function(data) {
                         if ($.isEmptyObject(data.error)) {
                             var likes = $(`#like-${postid}`);
