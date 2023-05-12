@@ -73,15 +73,15 @@
             <li><a class="text-sm custom-text hover:underline  {{ request()->is('messages') ? 'text-blue-600 font-bold' : '' }}"
                     href="{{ route('message.index') }}">Message
                     Board</a></li>
-            <li class="text-gray-300">
+            {{-- <li class="text-gray-300">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
                     class="w-4 h-4 current-fill" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
                 </svg>
-            </li>
-            <li><a class=" {{ request()->is('rules') ? 'text-blue-600 font-bold' : '' }} text-sm custom-text hover:underline "
-                    href="{{ route('rules.index') }}">Rules</a></li>
+            </li> --}}
+            {{-- <li><a class=" {{ request()->is('rules') ? 'text-blue-600 font-bold' : '' }} text-sm custom-text hover:underline "
+                    href="{{ route('rules.index') }}">Rules</a></li> --}}
             <li class="text-gray-300">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
                     class="w-4 h-4 current-fill" viewBox="0 0 24 24">
@@ -97,24 +97,27 @@
                     href="#!" id="info-btn">Info ↓</a>
                 <div class="absolute hidden bg-white p-3 right-0 left-0 w-32  flex-col rounded" id="info-dropdown">
                     <div class="flex flex-col gap-5">
-                        <a href="{{ route('welcome.camping') }}"
-                            class="font-semibold hover:bg-orange-400 hover:text-white transition text-sm custom-text hover:underline rounded  p-1">Campers</a>
-                        <a href="{{ route('welcome.bb') }}"
-                            class="font-semibold hover:bg-orange-400 hover:text-white transition text-sm custom-text hover:underline rounded p-1">B
-                            and B</a>
+                        <a href="{{ route('amenities.index') }}"
+                            class="font-semibold hover:bg-orange-400 hover:text-white transition text-sm custom-text hover:underline rounded  p-1">Local Information</a>
+                        <a href="{{ route('pizza.index') }}"
+                            class="font-semibold hover:bg-orange-400 hover:text-white transition text-sm custom-text hover:underline rounded p-1">Pizza</a>
+                        <a href="{{ route('goats.index') }}"
+                            class="font-semibold hover:bg-orange-400 hover:text-white transition text-sm custom-text hover:underline rounded p-1">Goats</a>
                     </div>
                 </div>
             </li>
 
         </ul>
         <a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold  rounded-xl transition duration-200"
-            href="https://www.instagram.com/coastalstay/" target="__blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="20">
+            href="https://www.instagram.com/coastalstay/" target="__blank"><svg xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512" height="20">
                 <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                 <path
                     d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
             </svg></a>
         <a class="hidden lg:inline-block py-2 px-6 bg-blue-500 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-200"
-            href="https://www.facebook.com/coastalstay" target="__blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="20" fill="white">
+            href="https://www.facebook.com/coastalstay" target="__blank"><svg xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512" height="20" fill="white">
                 <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                 <path
                     d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z" />
@@ -157,10 +160,10 @@
                         <a class="block p-4 text-sm font-semibold custom-text hover:bg-blue-50 hover:text-blue-600 rounded"
                             href="{{ route('message.index') }}">Message Board</a>
                     </li>
-                    <li class="mb-1">
+                    {{-- <li class="mb-1">
                         <a class="block p-4 text-sm font-semibold custom-text hover:bg-blue-50 hover:text-blue-600 rounded"
                             href="{{ route('rules.index') }}">Rules</a>
-                    </li>
+                    </li> --}}
                     {{-- <li class="mb-1">
                         <a class="block p-4 text-sm font-semibold custom-text hover:bg-blue-50 hover:text-blue-600 rounded"
                             href="{{ route('contact.index') }}">Contact</a>
@@ -170,11 +173,12 @@
                             href="#!" id="info-btn-m">Info ↓</a>
                         <div class=" hidden bg-white p-3 right-0 left-0 w-32  flex-col rounded" id="info-dropdown-m">
                             <div class="flex flex-col gap-5">
-                                <a href="{{ route('welcome.camping') }}"
-                                    class="font-semibold hover:bg-orange-400 hover:text-white transition text-sm custom-text hover:underline rounded  p-1">Campers</a>
-                                <a href="{{ route('welcome.bb') }}"
-                                    class="font-semibold hover:bg-orange-400 hover:text-white transition text-sm custom-text hover:underline rounded p-1">B
-                                    and B</a>
+                                <a href="{{ route('amenities.index') }}"
+                                    class="font-semibold hover:bg-orange-400 hover:text-white transition text-sm custom-text hover:underline rounded  p-1">Local Information</a>
+                                <a href="{{ route('goats.index') }}"
+                                    class="font-semibold hover:bg-orange-400 hover:text-white transition text-sm custom-text hover:underline rounded p-1">Goats</a>
+                                    <a href="{{ route('pizza.index') }}"
+                                    class="font-semibold hover:bg-orange-400 hover:text-white transition text-sm custom-text hover:underline rounded p-1">Pizza</a>
                             </div>
                         </div>
                     </li>
@@ -274,12 +278,12 @@
                         Local Activities / Amenities
                     </a>
                 </div>
-                <div class="px-5 py-2">
+                {{-- <div class="px-5 py-2">
                     <a href="{{ route('hotspot.index') }}"
                         class="text-base leading-6 custom-text hover:text-gray-900">
                         Hotspots
                     </a>
-                </div>
+                </div> --}}
                 {{-- <div class="px-5 py-2">
                     <a href="{{ route('contact.index') }}"
                         class="text-base leading-6 custom-text hover:text-gray-900">

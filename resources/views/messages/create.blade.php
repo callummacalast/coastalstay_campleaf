@@ -9,7 +9,7 @@
         <form action="{{ route('message.store') }}" method="post" class="m-3">
             @csrf
             <div class="flex flex-col">
-                <label for="title" class="font-bold">Message Title</label>
+                <label for="title" class="font-bold">Message Title <span class="text-red-400">*</span></label>
                 <input type="text" name="title" id="title" class="rounded border-none bg-gray-100 shadow"
                     value="{{ old('title') }}">
                 @if ($errors->has('title'))
@@ -19,10 +19,20 @@
             </div>
 
             <div class="flex flex-col my-3">
-                <label for="title" class="font-bold">Message</label>
+                <label for="title" class="font-bold">Message <span class="text-red-400">*</span></label>
                 <textarea rows="5" name="message" id="title" class="rounded border-none bg-gray-100 shadow">{{ old('message') }}</textarea>
                 @if ($errors->has('message'))
                     <div class="error text-red-400 text-sm">{{ $errors->first('message') }}
+                    </div>
+                @endif
+            </div>
+
+            <div class="flex flex-col">
+                <label for="title" class="font-bold">Name</label>
+                <input type="text" name="title" id="title" class="rounded border-none bg-gray-100 w-1/4 shadow"
+                    value="{{ old('title') }}">
+                @if ($errors->has('title'))
+                    <div class="error text-red-400 text-sm">{{ $errors->first('title') }}
                     </div>
                 @endif
             </div>

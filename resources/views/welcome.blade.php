@@ -19,12 +19,12 @@
                                 the good stuff!
                                 Hit the welcome pack button and find all your essentials!</p>
                             <div class="flex flex-wrap justify-center">
-                                <a href="{{ route('welcome.camping') }}"
+                                <a href="{{ route('amenities.index') }}"
                                     class="w-full lg:w-auto sm:w-auto px-8 py-3 m-2 text-lg font-semibold rounded hover:bg-white custom-text"
-                                    style="background: #edab28;">I am camping!</a>
-                                <a href="{{ route('welcome.bb') }}"
+                                    style="background: #edab28;">See some useful information!</a>
+                                {{-- <a href="{{ route('welcome.bb') }}"
                                     class="w-full lg:w-auto sm:w-auto px-8 py-3 m-2 text-lg font-semibold rounded hover:bg-white custom-text"
-                                    style="background: #edab28;">I am B&B!</a>
+                                    style="background: #edab28;">I am B&B!</a> --}}
                             </div>
                         </div>
                     </div>
