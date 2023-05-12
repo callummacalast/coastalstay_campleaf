@@ -32,9 +32,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/bb/welcome-pack', [HomeController::class, 'welcomeBandb'])->name('welcome.bb');
-Route::get('/camping/welcome-pack', [HomeController::class, 'welcomeCamping'])->name('welcome.camping');
+// Route::get('/bb/welcome-pack', [HomeController::class, 'welcomeBandb'])->name('welcome.bb');
+// Route::get('/camping/welcome-pack', [HomeController::class, 'welcomeCamping'])->name('welcome.camping');
 Route::get('/local-amenities', [HomeController::class, 'localAmenities'])->name('amenities.index');
+Route::get('/info/goats', [HomeController::class, 'goats'])->name('goats.index');
+Route::get('/info/pizza', [HomeController::class, 'pizza'])->name('pizza.index');
 
 
 

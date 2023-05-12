@@ -59,4 +59,14 @@ class HomeController extends Controller
     {
         return view('amenities.index');
     }
+
+    public function pizza()
+    {
+        return view('pizza.index');
+    }
+
+    public function goats()
+    {
+        return view('goats.index');
+    }
 }
