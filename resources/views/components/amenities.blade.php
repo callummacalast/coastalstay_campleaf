@@ -56,7 +56,7 @@
         evt.currentTarget.className += " active";
     }
 </script>
-<section class="custom-text m-5">
+<section class="custom-text m-5 pt-10">
     <!-- Tab links -->
     <div class="tab">
         <button class="tablinks active" onclick="openCity(event, 'shops')">Shops And Supermarkets</button>

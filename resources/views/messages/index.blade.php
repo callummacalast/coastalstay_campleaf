@@ -22,8 +22,15 @@
                                 <img class="w-12 h-12 rounded-full"
                                     src="https://source.unsplash.com/random/?{{ $count }}&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" />
                                 <div class="ml-2 mt-0.5">
-                                    <span
-                                        class="block  text-base leading-snug text-white custom-text font-bold">Camper</span>
+                                    @if ($message->name)
+                                        @isset($message->name)
+                                            <span
+                                                class="block  text-base leading-snug text-white custom-text font-bold">{{ ucwords($message->name) }}</span>
+                                        @endisset
+                                    @else
+                                        <span
+                                            class="block  text-base leading-snug text-white custom-text font-bold">Camper</span>
+                                    @endif
                                     <span
                                         class="block text-sm custom-text font-semibold leading-snug">{{ \Carbon\Carbon::parse($message->created_at)->diffForHumans() }}</span>
                                 </div>

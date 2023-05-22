@@ -29,10 +29,10 @@
 
             <div class="flex flex-col">
                 <label for="title" class="font-bold">Name</label>
-                <input type="text" name="title" id="title" class="rounded border-none bg-gray-100 w-1/4 shadow"
-                    value="{{ old('title') }}">
-                @if ($errors->has('title'))
-                    <div class="error text-red-400 text-sm">{{ $errors->first('title') }}
+                <input type="text" name="name" id="name" class="rounded border-none bg-gray-100 w-1/4 shadow"
+                    value="{{ old('name') }}">
+                @if ($errors->has('name'))
+                    <div class="error text-red-400 text-sm">{{ $errors->first('name') }}
                     </div>
                 @endif
             </div>
