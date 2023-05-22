@@ -16,7 +16,7 @@ class MessageBoardItemController extends Controller
     public function index()
     {
 
-        $messages = MessageBoardItem::orderBy('likes', 'desc')->paginate(10);
+        $messages = MessageBoardItem::orderBy('created_at', 'desc')->paginate(10);
 
 
         return view('messages.index', compact('messages'));
@@ -43,8 +43,10 @@ class MessageBoardItemController extends Controller
         $validated = $request->validate([
             'title' => 'required',
             'message' => 'required',
-            'status' => 'required'
+            'status' => 'required',
+            'name' => 'string|nullable'
         ]);
+
 
         $message = new MessageBoardItem;
 
